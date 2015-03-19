@@ -280,7 +280,8 @@
     <g
        id="TMP-normal-slide"
        inkscape:label="slide-n"
-       transform="translate(1644.7968,838.0656)">
+       transform="translate(1644.7968,838.0656)"
+       class="slide">
       <use
          inkscape:label="#use4149"
          height="100%"
@@ -319,7 +320,8 @@
     <g
        id="TMP-title-slide"
        inkscape:label="title-slide"
-       transform="translate(469.4403,17.929254)">
+       transform="translate(469.4403,17.929254)"
+       class="slide">
       <use
          inkscape:label="title-slide-background"
          height="100%"
@@ -551,4 +553,47 @@
          style="fill:#edad0b;fill-opacity:1" />
     </g>
   </g>
+  <script
+     id="main-script">
+    (function() {
+        'use strict';
+        var slideIdRe = /^slide-([0-9])+$/;
+        function toArray(arrayLike) {
+            return Array.prototype.slice.call(arrayLike);
+        }
+
+        var slides = toArray(document.querySelectorAll('.slide'));
+        slides = slides.filter(function(s) { return slideIdRe.exec(s.id); });
+        slides.sort(function(a, b) {
+            var aIndex = slideIdRe.exec(a.id)[1];
+            var bIndex = slideIdRe.exec(b.id)[1];
+            return aIndex - bIndex;
+        });
+        var currentIndex = 0;
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode === 0 || e.keyCode === 39) {
+                // next
+                var s = document.querySelector('#slide-' + (currentIndex + 1));
+                if (s) {
+                    currentIndex += 1;
+                    var svg = document.querySelector('svg');
+                    svg.setAttribute('viewBox', '0 0 0 0');
+                    var bb = s.getBoundingClientRect();
+                    svg.setAttribute('viewBox', bb.left + ' ' + bb.top + ' ' + bb.width + ' ' + bb.height);
+                }
+            }
+            else if (e.keyCode === 8 || e.keyCode === 37) {
+                // previous
+                var s = document.querySelector('#slide-' + (currentIndex - 1));
+                if (s) {
+                    currentIndex -= 1;
+                    var svg = document.querySelector('svg');
+                    svg.setAttribute('viewBox', '0 0 0 0');
+                    var bb = s.getBoundingClientRect();
+                    svg.setAttribute('viewBox', bb.left + ' ' + bb.top + ' ' + bb.width + ' ' + bb.height);
+                }
+            }
+        });
+    })();
+  </script>
 </svg>
