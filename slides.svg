@@ -476,5 +476,79 @@
          x="48"
          id="tspan4294"
          sodipodi:role="line">Accent</tspan></text>
+    <g
+       transform="translate(4045.2968,-569.4344)"
+       inkscape:label="slide-1"
+       id="slide-1"
+       class="slide">
+      <use
+         x="0"
+         y="0"
+         xlink:href="#TMP-background"
+         id="use27205"
+         transform="translate(-1644.7968,1081.9344)"
+         width="100%"
+         height="100%"
+         inkscape:label="#use4149" />
+      <text
+         inkscape:label="#slide-title"
+         sodipodi:linespacing="125%"
+         id="text27207"
+         y="952.612"
+         x="-2849.6611"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0086ab;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:60px;font-family:Raleway;-inkscape-font-specification:'Raleway Ultra-Bold';fill:#0086ab;fill-opacity:1"
+           y="952.612"
+           x="-2849.6611"
+           id="tspan27209"
+           sodipodi:role="line">Slide Title</tspan></text>
+    </g>
+    <g
+       transform="translate(1749.9403,-429.57074)"
+       inkscape:label="slide-0"
+       id="slide-0"
+       class="slide">
+      <use
+         x="0"
+         y="0"
+         xlink:href="#TMP-background"
+         id="use27213"
+         transform="translate(-469.4403,942.07074)"
+         width="100%"
+         height="100%"
+         inkscape:label="#use4189" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text27215"
+         y="1069.2877"
+         x="-1240.0359"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0086ab;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:80px;font-family:Raleway;-inkscape-font-specification:'Raleway Ultra-Bold';text-align:center;text-anchor:middle;fill:#0086ab;fill-opacity:1"
+           y="1069.2877"
+           x="-1240.0359"
+           id="tspan27217"
+           sodipodi:role="line">Presentation Title</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text27219"
+         y="1245.6436"
+         x="-1237.2416"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Raleway;-inkscape-font-specification:Raleway;text-align:center;text-anchor:middle"
+           y="1245.6436"
+           x="-1237.2416"
+           id="tspan27221"
+           sodipodi:role="line">Author's Name</tspan></text>
+      <rect
+         y="1092.0868"
+         x="-1749.9403"
+         height="11.6923"
+         width="1024.0007"
+         id="rect27223"
+         style="fill:#edad0b;fill-opacity:1" />
+    </g>
   </g>
 </svg>
