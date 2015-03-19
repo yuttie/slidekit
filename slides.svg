@@ -566,7 +566,7 @@
                 if (s) {
                     currentIndex += 1;
                     var svg = document.querySelector('svg');
-                    svg.setAttribute('viewBox', '0 0 0 0');
+                    svg.setAttribute('viewBox', null);  // reset the user coordinate system
                     var bb = s.getBoundingClientRect();
                     svg.setAttribute('viewBox', bb.left + ' ' + bb.top + ' ' + bb.width + ' ' + bb.height);
                 }
@@ -577,7 +577,7 @@
                 if (s) {
                     currentIndex -= 1;
                     var svg = document.querySelector('svg');
-                    svg.setAttribute('viewBox', '0 0 0 0');
+                    svg.setAttribute('viewBox', null);  // reset the user coordinate system
                     var bb = s.getBoundingClientRect();
                     svg.setAttribute('viewBox', bb.left + ' ' + bb.top + ' ' + bb.width + ' ' + bb.height);
                 }
