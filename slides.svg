@@ -250,7 +250,7 @@
     </g>
     <g
        id="TMP-background"
-       inkscape:label="#g15996"
+       inkscape:label="background"
        transform="translate(-1280.5,-512.49999)">
       <rect
          inkscape:label="#rect15181"
@@ -279,7 +279,7 @@
          id="tspan4176">&lt;Background&gt;</tspan></text>
     <g
        id="TMP-normal-slide"
-       inkscape:label="#g4180"
+       inkscape:label="slide-n"
        transform="translate(1644.7968,838.0656)">
       <use
          inkscape:label="#use4149"
@@ -317,15 +317,15 @@
          x="-1445.2843"
          sodipodi:role="line">&lt;Normal Slide&gt;</tspan></text>
     <g
-       id="TMP-title"
-       inkscape:label="#g4231"
+       id="TMP-title-slide"
+       inkscape:label="title-slide"
        transform="translate(469.4403,17.929254)">
       <use
-         inkscape:label="#use4189"
+         inkscape:label="title-slide-background"
          height="100%"
          width="100%"
          transform="translate(-469.4403,942.07074)"
-         id="TMP-title-background-use"
+         id="TMP-title-slide-background-use"
          xlink:href="#TMP-background"
          y="0"
          x="0" />
