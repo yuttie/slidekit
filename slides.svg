@@ -74,6 +74,94 @@
        empspacing="10"
        spacingx="16"
        spacingy="16" />
+    <sodipodi:guide
+       position="64,720"
+       orientation="1,0"
+       id="guide27193" />
+    <sodipodi:guide
+       position="960,720"
+       orientation="0,1"
+       id="guide27195" />
+    <sodipodi:guide
+       position="960,48"
+       orientation="1,0"
+       id="guide27197" />
+    <sodipodi:guide
+       position="64,48"
+       orientation="0,1"
+       id="guide27199" />
+    <sodipodi:guide
+       position="64,-208"
+       orientation="0,1"
+       id="guide8132" />
+    <sodipodi:guide
+       position="64,-880"
+       orientation="0,1"
+       id="guide8136" />
+    <sodipodi:guide
+       position="64,-1008"
+       orientation="0,1"
+       id="guide8138" />
+    <sodipodi:guide
+       position="64,-1680"
+       orientation="0,1"
+       id="guide8140" />
+    <sodipodi:guide
+       position="64,-1808"
+       orientation="0,1"
+       id="guide8142" />
+    <sodipodi:guide
+       position="64,-2480"
+       orientation="0,1"
+       id="guide8144" />
+    <sodipodi:guide
+       position="64,-2608"
+       orientation="0,1"
+       id="guide8146" />
+    <sodipodi:guide
+       position="64,-3280"
+       orientation="0,1"
+       id="guide8148" />
+    <sodipodi:guide
+       position="1184,720"
+       orientation="1,0"
+       id="guide8529" />
+    <sodipodi:guide
+       position="2080,720"
+       orientation="1,0"
+       id="guide8531" />
+    <sodipodi:guide
+       position="2304,720"
+       orientation="1,0"
+       id="guide8533" />
+    <sodipodi:guide
+       position="3200,720"
+       orientation="1,0"
+       id="guide8535" />
+    <sodipodi:guide
+       position="3424,720"
+       orientation="1,0"
+       id="guide8537" />
+    <sodipodi:guide
+       position="4320,720"
+       orientation="1,0"
+       id="guide8539" />
+    <sodipodi:guide
+       position="4544,720"
+       orientation="1,0"
+       id="guide8541" />
+    <sodipodi:guide
+       position="5440,720"
+       orientation="1,0"
+       id="guide8543" />
+    <sodipodi:guide
+       position="5664,720"
+       orientation="1,0"
+       id="guide8545" />
+    <sodipodi:guide
+       position="6560,720"
+       orientation="1,0"
+       id="guide8547" />
   </sodipodi:namedview>
   <metadata
      id="metadata11213">
