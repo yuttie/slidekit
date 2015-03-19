@@ -557,18 +557,7 @@
      id="main-script">
     (function() {
         'use strict';
-        var slideIdRe = /^slide-([0-9])+$/;
-        function toArray(arrayLike) {
-            return Array.prototype.slice.call(arrayLike);
-        }
 
-        var slides = toArray(document.querySelectorAll('.slide'));
-        slides = slides.filter(function(s) { return slideIdRe.exec(s.id); });
-        slides.sort(function(a, b) {
-            var aIndex = slideIdRe.exec(a.id)[1];
-            var bIndex = slideIdRe.exec(b.id)[1];
-            return aIndex - bIndex;
-        });
         var currentIndex = 0;
         document.addEventListener('keydown', function(e) {
             if (e.keyCode === 0 || e.keyCode === 39) {
