@@ -555,13 +555,13 @@
   </g>
   <script
      id="main-script">
-    (function() {
+    var SlideKit = (function() {
         'use strict';
 
         var currentIndex = 0;
-        document.addEventListener('keydown', function(e) {
-            if (e.keyCode === 0 || e.keyCode === 39) {
-                // next
+
+        return {
+            nextSlide: function() {
                 var s = document.querySelector('#slide-' + (currentIndex + 1));
                 if (s) {
                     currentIndex += 1;
@@ -570,9 +570,8 @@
                     var bb = s.getBoundingClientRect();
                     svg.setAttribute('viewBox', bb.left + ' ' + bb.top + ' ' + bb.width + ' ' + bb.height);
                 }
-            }
-            else if (e.keyCode === 8 || e.keyCode === 37) {
-                // previous
+            },
+            prevSlide: function() {
                 var s = document.querySelector('#slide-' + (currentIndex - 1));
                 if (s) {
                     currentIndex -= 1;
@@ -582,7 +581,19 @@
                     svg.setAttribute('viewBox', bb.left + ' ' + bb.top + ' ' + bb.width + ' ' + bb.height);
                 }
             }
-        });
+        };
     })();
+
+    // Key bindings
+    document.addEventListener('keydown', function(e) {
+        if (e.keyCode === 0 || e.keyCode === 39) {
+            // next
+            SlideKit.nextSlide();
+        }
+        else if (e.keyCode === 8 || e.keyCode === 37) {
+            // previous
+            SlideKit.prevSlide();
+        }
+    });
   </script>
 </svg>
