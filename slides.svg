@@ -560,28 +560,25 @@
 
         var currentIndex = 0;
 
-        return {
-            nextSlide: function() {
-                var s = document.querySelector('#slide-' + (currentIndex + 1));
-                if (s) {
-                    currentIndex += 1;
-                    var svg = document.querySelector('svg');
-                    svg.setAttribute('viewBox', null);  // reset the user coordinate system
-                    var bb = s.getBoundingClientRect();
-                    svg.setAttribute('viewBox', bb.left + ' ' + bb.top + ' ' + bb.width + ' ' + bb.height);
-                }
-            },
-            prevSlide: function() {
-                var s = document.querySelector('#slide-' + (currentIndex - 1));
-                if (s) {
-                    currentIndex -= 1;
-                    var svg = document.querySelector('svg');
-                    svg.setAttribute('viewBox', null);  // reset the user coordinate system
-                    var bb = s.getBoundingClientRect();
-                    svg.setAttribute('viewBox', bb.left + ' ' + bb.top + ' ' + bb.width + ' ' + bb.height);
-                }
+        var module = {};
+        module.gotoSlide = function(i) {
+            var s = document.querySelector('#slide-' + i);
+            if (s) {
+                currentIndex = i;
+                var svg = document.querySelector('svg');
+                svg.setAttribute('viewBox', null);  // reset the user coordinate system
+                var bb = s.getBoundingClientRect();
+                svg.setAttribute('viewBox', bb.left + ' ' + bb.top + ' ' + bb.width + ' ' + bb.height);
             }
         };
+        module.nextSlide = function() {
+            module.gotoSlide(currentIndex + 1);
+        };
+        module.prevSlide = function() {
+            module.gotoSlide(currentIndex - 1);
+        };
+
+        return module;
     })();
 
     // Key bindings
