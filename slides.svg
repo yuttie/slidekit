@@ -569,13 +569,18 @@
                 svg.removeAttribute('viewBox');  // reset the user coordinate system
                 var bb = s.getBoundingClientRect();
                 svg.setAttribute('viewBox', bb.left + ' ' + bb.top + ' ' + bb.width + ' ' + bb.height);
+
+                return i;
+            }
+            else {
+                return false;
             }
         };
         module.nextSlide = function() {
-            module.gotoSlide(currentIndex + 1);
+            return module.gotoSlide(currentIndex + 1);
         };
         module.prevSlide = function() {
-            module.gotoSlide(currentIndex - 1);
+            return module.gotoSlide(currentIndex - 1);
         };
 
         return module;
