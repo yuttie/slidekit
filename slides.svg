@@ -581,6 +581,9 @@
         return module;
     })();
 
+    // Move to the first slide
+    SlideKit.gotoSlide(0);
+
     // Key bindings
     document.addEventListener('keydown', function(e) {
         if (e.keyCode === 0 || e.keyCode === 39) {
