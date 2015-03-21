@@ -566,7 +566,7 @@
             if (s) {
                 currentIndex = i;
                 var svg = document.querySelector('svg');
-                svg.setAttribute('viewBox', null);  // reset the user coordinate system
+                svg.removeAttribute('viewBox');  // reset the user coordinate system
                 var bb = s.getBoundingClientRect();
                 svg.setAttribute('viewBox', bb.left + ' ' + bb.top + ' ' + bb.width + ' ' + bb.height);
             }
