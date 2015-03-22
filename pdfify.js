@@ -40,7 +40,7 @@ var Session = function(page, callbacks) {
  * console.log(formatNumber(+123, 5));  => 00123
  */
 function formatNumber(n, width) {
-    width = width || -1;
+    width = width === undefined ? -1 : width;
     if (n >= 0) {
         var str = '' + n;
         while (str.length < width) {
