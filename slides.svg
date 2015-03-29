@@ -45,7 +45,7 @@
      borderlayer="true"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:snap-global="true"
+     inkscape:snap-global="false"
      inkscape:snap-page="true"
      inkscape:snap-text-baseline="true"
      inkscape:snap-center="true"
@@ -91,35 +91,35 @@
        orientation="0,1"
        id="guide27199" />
     <sodipodi:guide
-       position="64,-208"
+       position="64,-80"
        orientation="0,1"
        id="guide8132" />
     <sodipodi:guide
-       position="64,-880"
+       position="64,-752"
        orientation="0,1"
        id="guide8136" />
     <sodipodi:guide
-       position="64,-1008"
+       position="64,-880"
        orientation="0,1"
        id="guide8138" />
     <sodipodi:guide
-       position="64,-1680"
+       position="64,-1552"
        orientation="0,1"
        id="guide8140" />
     <sodipodi:guide
-       position="64,-1808"
+       position="64,-1680"
        orientation="0,1"
        id="guide8142" />
     <sodipodi:guide
-       position="64,-2480"
+       position="64,-2352"
        orientation="0,1"
        id="guide8144" />
     <sodipodi:guide
-       position="64,-2608"
+       position="64,-2480"
        orientation="0,1"
        id="guide8146" />
     <sodipodi:guide
-       position="64,-3280"
+       position="64,-3152"
        orientation="0,1"
        id="guide8148" />
     <sodipodi:guide
@@ -162,6 +162,14 @@
        position="6560,720"
        orientation="1,0"
        id="guide8547" />
+    <sodipodi:guide
+       position="64,1008"
+       orientation="0,1"
+       id="guide8255" />
+    <sodipodi:guide
+       position="64,1680"
+       orientation="0,1"
+       id="guide8257" />
   </sodipodi:namedview>
   <metadata
      id="metadata11213">
@@ -196,290 +204,328 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
+     inkscape:label="Templates"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-284.36219)">
-    <g
-       transform="translate(3040,-159.99999)"
-       id="g4258">
-      <rect
-         style="fill:#4d4d4d;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         id="rect4260"
-         width="1120"
-         height="480"
-         x="-3040"
-         y="-227.63782" />
-      <text
-         inkscape:label="#text4141"
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:80px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="-2991.4338"
-         y="-143.77292"
-         id="text4262"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan4264"
-           x="-2991.4338"
-           y="-143.77292"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:60px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'">Colors</tspan></text>
-    </g>
-    <g
-       id="template-area"
-       transform="translate(1440,-159.99999)">
-      <rect
-         y="-227.63782"
-         x="-3040"
-         height="2960"
-         width="1439.5"
-         id="rect4139"
-         style="fill:#4d4d4d;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <text
-         sodipodi:linespacing="125%"
-         id="template-area-label"
-         y="-143.77292"
-         x="-2991.4338"
-         style="font-style:normal;font-weight:normal;font-size:80px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"
-         inkscape:label="#text4141"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:60px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'"
-           y="-143.77292"
-           x="-2991.4338"
-           id="tspan4143"
-           sodipodi:role="line">Templates</tspan></text>
-    </g>
-    <g
-       id="TMP-background"
-       inkscape:label="background"
-       transform="translate(-1280.5,-512.49999)">
-      <rect
-         inkscape:label="#rect15181"
-         y="284.36218"
-         x="0"
-         height="768"
-         width="1024"
-         id="TMP-background-rect"
-         style="fill:#eeeeee;fill-opacity:1;stroke:none;stroke-width:2.07399988;stroke-miterlimit:4;stroke-dasharray:none;image-rendering:auto" />
-    </g>
+     transform="translate(0,-284.36219)"
+     style="display:inline">
     <g
        id="slide-template"
        inkscape:label="#g15991"
        transform="translate(-2992.4911,-383.24375)" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-1445.2843"
-       y="166.9422"
-       id="text4145"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="-1445.2843"
-         y="166.9422"
-         style="text-align:center;text-anchor:middle;fill:#ffffff"
-         id="tspan4176">&lt;Background&gt;</tspan></text>
     <g
-       id="TMP-normal-slide"
-       inkscape:label="slide-n"
-       transform="translate(1644.7968,838.0656)"
-       class="slide">
-      <use
-         inkscape:label="#use4149"
-         height="100%"
-         width="100%"
-         transform="translate(-1644.7968,1081.9344)"
-         id="TMP-normal-slide-background-use"
-         xlink:href="#TMP-background"
-         y="0"
-         x="0" />
+       id="g8230"
+       transform="translate(1600,-800)">
+      <g
+         transform="translate(1280,240.00001)"
+         id="template-area"
+         style="fill:#666666;stroke:none">
+        <rect
+           style="fill:#808080;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           id="rect4139"
+           width="4000"
+           height="992"
+           x="-3040"
+           y="-227.63782" />
+        <text
+           inkscape:label="#text4141"
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:80px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="-2991.4338"
+           y="-143.77292"
+           id="template-area-label"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4143"
+             x="-2991.4338"
+             y="-143.77292"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:60px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke:none">Templates</tspan></text>
+      </g>
+      <g
+         transform="translate(-1600,-159.99999)"
+         inkscape:label="background"
+         id="TMP-background">
+        <rect
+           style="fill:#eeeeee;fill-opacity:1;stroke:none;stroke-width:2.07399988;stroke-miterlimit:4;stroke-dasharray:none;image-rendering:auto"
+           id="TMP-background-rect"
+           width="1024"
+           height="768"
+           x="0"
+           y="284.36218"
+           inkscape:label="#rect15181" />
+      </g>
       <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0086ab;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="-2849.6611"
-         y="952.612"
-         id="TMP-normal-slide-slide-title"
          sodipodi:linespacing="125%"
-         inkscape:label="#slide-title"><tspan
-           sodipodi:role="line"
-           id="tspan15179"
-           x="-2849.6611"
+         id="text4145"
+         y="968.04218"
+         x="-1087.9884"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan4176"
+           style="text-align:center;text-anchor:middle;fill:#ffffff"
+           y="968.04218"
+           x="-1087.9884"
+           sodipodi:role="line">&lt;Background&gt;</tspan></text>
+      <g
+         class="slide"
+         transform="translate(3565.2968,-729.4344)"
+         inkscape:label="slide-n"
+         id="TMP-normal-slide">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#TMP-background"
+           id="TMP-normal-slide-background-use"
+           transform="translate(-1325.2968,729.4344)"
+           width="100%"
+           height="100%"
+           inkscape:label="#use4149" />
+        <text
+           inkscape:label="#slide-title"
+           sodipodi:linespacing="125%"
+           id="TMP-normal-slide-slide-title"
            y="952.612"
-           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:60px;font-family:Raleway;-inkscape-font-specification:'Raleway Ultra-Bold';fill:#0086ab;fill-opacity:1">Slide Title</tspan></text>
-    </g>
-    <text
-       sodipodi:linespacing="125%"
-       id="text4185"
-       y="2090.4321"
-       x="-1445.2843"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         id="tspan4187"
-         style="text-align:center;text-anchor:middle;fill:#ffffff"
-         y="2090.4321"
-         x="-1445.2843"
-         sodipodi:role="line">&lt;Normal Slide&gt;</tspan></text>
-    <g
-       id="TMP-title-slide"
-       inkscape:label="title-slide"
-       transform="translate(469.4403,17.929254)"
-       class="slide">
-      <use
-         inkscape:label="title-slide-background"
-         height="100%"
-         width="100%"
-         transform="translate(-469.4403,942.07074)"
-         id="TMP-title-slide-background-use"
-         xlink:href="#TMP-background"
-         y="0"
-         x="0" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0086ab;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="-1240.0359"
-         y="1069.2877"
-         id="text4242"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan4244"
-           x="-1240.0359"
-           y="1069.2877"
-           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:80px;font-family:Raleway;-inkscape-font-specification:'Raleway Ultra-Bold';text-align:center;text-anchor:middle;fill:#0086ab;fill-opacity:1">Presentation Title</tspan></text>
+           x="-2849.6611"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0086ab;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:60px;font-family:Raleway;-inkscape-font-specification:'Raleway Ultra-Bold';fill:#0086ab;fill-opacity:1"
+             y="952.612"
+             x="-2849.6611"
+             id="tspan15179"
+             sodipodi:role="line">Slide Title</tspan></text>
+      </g>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="-1237.2416"
-         y="1245.6436"
-         id="text4246"
+         x="1152.0116"
+         y="968.04218"
+         id="text4185"
          sodipodi:linespacing="125%"><tspan
            sodipodi:role="line"
-           id="tspan4248"
-           x="-1237.2416"
+           x="1152.0116"
+           y="968.04218"
+           style="text-align:center;text-anchor:middle;fill:#ffffff"
+           id="tspan4187">&lt;Normal Slide&gt;</tspan></text>
+      <g
+         class="slide"
+         transform="translate(1269.9403,-589.57074)"
+         inkscape:label="title-slide"
+         id="TMP-title-slide">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#TMP-background"
+           id="TMP-title-slide-background-use"
+           transform="translate(-149.9403,589.57074)"
+           width="100%"
+           height="100%"
+           inkscape:label="title-slide-background" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4242"
+           y="1069.2877"
+           x="-1240.0359"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0086ab;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:80px;font-family:Raleway;-inkscape-font-specification:'Raleway Ultra-Bold';text-align:center;text-anchor:middle;fill:#0086ab;fill-opacity:1"
+             y="1069.2877"
+             x="-1240.0359"
+             id="tspan4244"
+             sodipodi:role="line">Presentation Title</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text4246"
            y="1245.6436"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Raleway;-inkscape-font-specification:Raleway;text-align:center;text-anchor:middle">Author's Name</tspan></text>
+           x="-1237.2416"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Raleway;-inkscape-font-specification:Raleway;text-align:center;text-anchor:middle"
+             y="1245.6436"
+             x="-1237.2416"
+             id="tspan4248"
+             sodipodi:role="line">Author's Name</tspan></text>
+        <rect
+           y="1092.0868"
+           x="-1749.9403"
+           height="11.6923"
+           width="1024.0007"
+           id="rect4298"
+           style="fill:#edad0b;fill-opacity:1" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4252"
+         y="968.04218"
+         x="32.011921"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan4254"
+           style="text-align:center;text-anchor:middle;fill:#ffffff"
+           y="968.04218"
+           x="32.011921"
+           sodipodi:role="line">&lt;Title Slide&gt;</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text8259"
+         y="968.04218"
+         x="2012.0116"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan8261"
+           style="text-align:center;text-anchor:middle;fill:#ffffff"
+           y="968.04218"
+           x="2012.0116"
+           sodipodi:role="line">&lt;Bullet&gt;</tspan></text>
+      <g
+         id="TMP-bullet"
+         inkscape:label="#g8286">
+        <circle
+           r="13.112195"
+           cy="752.81097"
+           cx="2012"
+           id="path8269"
+           style="display:inline;fill:#333333;fill-opacity:1;stroke:none;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+    </g>
+    <g
+       id="g8208"
+       transform="translate(0,-2400)">
+      <g
+         id="g4258"
+         transform="translate(2240,2880)">
+        <rect
+           y="-227.63782"
+           x="-3040"
+           height="480"
+           width="640"
+           id="rect4260"
+           style="fill:#808080;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4262"
+           y="-143.77292"
+           x="-2991.4338"
+           style="font-style:normal;font-weight:normal;font-size:80px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"
+           inkscape:label="#text4141"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:60px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'"
+             y="-143.77292"
+             x="-2991.4338"
+             id="tspan4264"
+             sodipodi:role="line">Colors</tspan></text>
+      </g>
+      <rect
+         y="2782.1921"
+         x="-560"
+         height="64"
+         width="64"
+         id="rect4256"
+         style="fill:#ffffff;fill-opacity:1" />
+      <rect
+         style="fill:#333333;fill-opacity:1"
+         id="rect4266"
+         width="64"
+         height="64"
+         x="-458.66663"
+         y="2782.1921" />
+      <rect
+         y="2891.9324"
+         x="-560"
+         height="64"
+         width="64"
+         id="rect4268"
+         style="fill:#0086ab;fill-opacity:1" />
+      <rect
+         style="fill:#42aac7;fill-opacity:1"
+         id="rect4270"
+         width="64"
+         height="64"
+         x="-458.66663"
+         y="2891.9324" />
+      <rect
+         y="2891.9324"
+         x="-357.33325"
+         height="64"
+         width="64"
+         id="rect4272"
+         style="fill:#97d3e3;fill-opacity:1" />
+      <rect
+         style="fill:#c9e8f1;fill-opacity:1"
+         id="rect4274"
+         width="64"
+         height="64"
+         x="-256"
+         y="2891.9324" />
       <rect
          style="fill:#edad0b;fill-opacity:1"
-         id="rect4298"
-         width="1024.0007"
-         height="11.6923"
-         x="-1749.9403"
-         y="1092.0868" />
+         id="rect4276"
+         width="64"
+         height="64"
+         x="-560"
+         y="3002.1921" />
+      <rect
+         y="3002.1921"
+         x="-458.66663"
+         height="64"
+         width="64"
+         id="rect4278"
+         style="fill:#f3c759;fill-opacity:1" />
+      <rect
+         style="fill:#f9e3aa;fill-opacity:1"
+         id="rect4280"
+         width="64"
+         height="64"
+         x="-357.33325"
+         y="3002.1921" />
+      <rect
+         y="3002.1921"
+         x="-256"
+         height="64"
+         width="64"
+         id="rect4282"
+         style="fill:#fcf1d3;fill-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4284"
+         y="2828.3623"
+         x="-752"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="2828.3623"
+           x="-752"
+           id="tspan4286"
+           sodipodi:role="line">Base</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-752"
+         y="2938.3623"
+         id="text4288"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4290"
+           x="-752"
+           y="2938.3623">Main</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-752"
+         y="3048.3623"
+         id="text4292"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4294"
+           x="-752"
+           y="3048.3623">Accent</tspan></text>
     </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-1445.2843"
-       y="1130.4321"
-       id="text4252"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="-1445.2843"
-         y="1130.4321"
-         style="text-align:center;text-anchor:middle;fill:#ffffff"
-         id="tspan4254">&lt;Title Slide&gt;</tspan></text>
-    <rect
-       style="fill:#ffffff;fill-opacity:1"
-       id="rect4256"
-       width="64"
-       height="64"
-       x="240"
-       y="-257.80783" />
-    <rect
-       y="-257.80783"
-       x="341.33334"
-       height="64"
-       width="64"
-       id="rect4266"
-       style="fill:#333333;fill-opacity:1" />
-    <rect
-       style="fill:#0086ab;fill-opacity:1"
-       id="rect4268"
-       width="64"
-       height="64"
-       x="240"
-       y="-148.06781" />
-    <rect
-       y="-148.06781"
-       x="341.33334"
-       height="64"
-       width="64"
-       id="rect4270"
-       style="fill:#42aac7;fill-opacity:1" />
-    <rect
-       style="fill:#97d3e3;fill-opacity:1"
-       id="rect4272"
-       width="64"
-       height="64"
-       x="442.66669"
-       y="-148.06781" />
-    <rect
-       y="-148.06781"
-       x="544"
-       height="64"
-       width="64"
-       id="rect4274"
-       style="fill:#c9e8f1;fill-opacity:1" />
-    <rect
-       y="-37.807816"
-       x="240"
-       height="64"
-       width="64"
-       id="rect4276"
-       style="fill:#edad0b;fill-opacity:1" />
-    <rect
-       style="fill:#f3c759;fill-opacity:1"
-       id="rect4278"
-       width="64"
-       height="64"
-       x="341.33334"
-       y="-37.807816" />
-    <rect
-       y="-37.807816"
-       x="442.66669"
-       height="64"
-       width="64"
-       id="rect4280"
-       style="fill:#f9e3aa;fill-opacity:1" />
-    <rect
-       style="fill:#fcf1d3;fill-opacity:1"
-       id="rect4282"
-       width="64"
-       height="64"
-       x="544"
-       y="-37.807816" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="48"
-       y="-211.63782"
-       id="text4284"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4286"
-         x="48"
-         y="-211.63782">Base</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text4288"
-       y="-101.63782"
-       x="48"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="-101.63782"
-         x="48"
-         id="tspan4290"
-         sodipodi:role="line">Main</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text4292"
-       y="8.3621826"
-       x="48"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="8.3621826"
-         x="48"
-         id="tspan4294"
-         sodipodi:role="line">Accent</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Slides"
+     style="display:inline">
     <g
-       transform="translate(4045.2968,-569.4344)"
+       transform="translate(4045.2968,-853.79659)"
        inkscape:label="slide-1"
        id="slide-1"
        class="slide">
@@ -488,7 +534,7 @@
          y="0"
          xlink:href="#TMP-background"
          id="use27205"
-         transform="translate(-1644.7968,1081.9344)"
+         transform="translate(-1325.2968,729.4344)"
          width="100%"
          height="100%"
          inkscape:label="#use4149" />
@@ -507,7 +553,7 @@
            sodipodi:role="line">Slide Title</tspan></text>
     </g>
     <g
-       transform="translate(1749.9403,-429.57074)"
+       transform="translate(1749.9403,-713.93293)"
        inkscape:label="slide-0"
        id="slide-0"
        class="slide">
@@ -516,7 +562,7 @@
          y="0"
          xlink:href="#TMP-background"
          id="use27213"
-         transform="translate(-469.4403,942.07074)"
+         transform="translate(-149.9403,589.57074)"
          width="100%"
          height="100%"
          inkscape:label="#use4189" />
