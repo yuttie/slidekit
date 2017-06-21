@@ -1,4 +1,4 @@
-const slidekit = function(svgDoc) {
+export default function slidekit(svgDoc) {
     'use strict';
 
     var currentIndex = 0;
@@ -27,4 +27,4 @@ const slidekit = function(svgDoc) {
     };
 
     return module;
-};
+}

@@ -1,3 +1,5 @@
+import slidekit from './slidekit';
+
 var sk;
 const slides = document.querySelector('#slides');
 slides.addEventListener('load', function(e) {
