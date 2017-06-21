@@ -12,5 +12,8 @@
   "devDependencies": {
     "svg-inline-loader": "^0.7.1",
     "webpack": "^3.0.0"
+  },
+  "dependencies": {
+    "phantom": "^4.0.4"
   }
 }

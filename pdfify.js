@@ -1,31 +1,8 @@
-var Session = function(page, callbacks) {
-    this.callbacks = callbacks;
-    this.i = 0;
-    this.next = function() {
-	var func = this.callbacks.shift();
-	if (func !== undefined) {
-	    func(page, this.i);
-            this.i += 1;
-	} else {
-	    page.onCallback = function() {};
-	}
-    };
+const process = require('process');
+const util = require('util');
+const execFile = util.promisify(require('child_process').execFile);
+const phantom = require('phantom');
 
-    page.onInitialized = function() {
-        page.evaluate(function() {
-            document.addEventListener('DOMContentLoaded', function() {
-                window.callPhantom('DOMContentLoaded');
-            }, false);
-        });
-    };
-
-    var self = this;
-    page.onCallback = function(data) {
-        if (data === 'DOMContentLoaded') {
-            self.next();
-        }
-    }
-};
 
 /**
  * formatNumber(number, width) returns a string of length width representing the number.
@@ -57,37 +34,36 @@ function formatNumber(n, width) {
     }
 }
 
-var system = require('system');
-var process = require('child_process');
-var webPage = require('webpage');
 
-var args = system.args.slice(1);
-var page = webPage.create();
+const fp = process.argv[2];
+(async function() {
+    const instance = await phantom.create();
+    const page = await instance.createPage();
+    await page.open(fp);
 
-new Session(page, [
-    function(page, _) {
-        page.open(args[0]);
-    },
-    function(page, _) {
-        var renderedFiles = [];
-        if (!page.evaluate(function() { return sk; })) {
-            console.log("The global variable `sk' is not available!");
-            phantom.exit();
-        }
-        var slideId = page.evaluate(function() { return sk.gotoSlide(0); });
+    if (!await page.evaluate(function() { return sk; })) {
+        console.log("The global variable `sk' is not available!");
+    }
+    else {
+        const renderedFiles = [];
+        let slideId = await page.evaluate(function() { return sk.gotoSlide(0); });
         while (slideId !== false) {
             console.log('Found #slide-' + slideId);
 
-            var filename = 'slide-' + formatNumber(slideId, 2) + '.pdf';
+            const filename = 'slide-' + formatNumber(slideId, 2) + '.pdf';
             page.render(filename);
             renderedFiles.push(filename);
 
-            slideId = page.evaluate(function() { return sk.nextSlide(); });
+            slideId = await page.evaluate(function() { return sk.nextSlide(); });
         }
 
-        process.execFile('pdfjoin', renderedFiles.concat('-o', 'slides.pdf'), null, function(error, stdout, stderr) {
-            console.log(stderr);
-            phantom.exit();
-        });
+        try {
+            await execFile('pdfjoin', renderedFiles.concat('-o', 'slides.pdf'));
+        }
+        catch (e) {
+            console.log('Error: pdfjoin failed!');
+        }
     }
-]).next();
+
+    await instance.exit();
+}());
