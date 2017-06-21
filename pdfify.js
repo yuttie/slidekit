@@ -37,7 +37,7 @@ function formatNumber(n, width) {
 
 const fp = process.argv[2];
 (async function() {
-    const instance = await phantom.create();
+    const instance = await phantom.create([], { logLevel: 'error' });
     const page = await instance.createPage();
     await page.open(fp);
 
