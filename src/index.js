@@ -4,7 +4,7 @@ import slidesSvg from './slides.svg';
 // Put the slides SVG inline
 document.write(slidesSvg);
 
-const sk = slidekit(document.querySelector('#slides'));
+var sk = slidekit(document.querySelector('#slides'));
 
 // Move to the first slide
 sk.gotoSlide(0);
@@ -20,3 +20,6 @@ document.addEventListener('keydown', function(e) {
         sk.prevSlide();
     }
 });
+
+// Make `sk` global
+window.sk = sk;

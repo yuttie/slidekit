@@ -70,7 +70,11 @@ new Session(page, [
     },
     function(page, _) {
         var renderedFiles = [];
-        var slideId = page.evaluate(function() { return SlideKit.gotoSlide(0); });
+        if (!page.evaluate(function() { return sk; })) {
+            console.log("The global variable `sk' is not available!");
+            phantom.exit();
+        }
+        var slideId = page.evaluate(function() { return sk.gotoSlide(0); });
         while (slideId !== false) {
             console.log('Found #slide-' + slideId);
 
@@ -78,7 +82,7 @@ new Session(page, [
             page.render(filename);
             renderedFiles.push(filename);
 
-            slideId = page.evaluate(function() { return SlideKit.nextSlide(); });
+            slideId = page.evaluate(function() { return sk.nextSlide(); });
         }
 
         process.execFile('pdfjoin', renderedFiles.concat('-o', 'slides.pdf'), null, function(error, stdout, stderr) {
