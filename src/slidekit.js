@@ -1,6 +1,7 @@
 export default function slidekit(svg) {
     'use strict';
 
+    document.title = svg.querySelector('title').textContent;
     var currentIndex = 0;
 
     var module = {};
