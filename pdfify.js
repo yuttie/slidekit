@@ -51,7 +51,7 @@ const fp = process.argv[2];
             console.log('Found #slide-' + slideId);
 
             const filename = 'slide-' + formatNumber(slideId, 2) + '.pdf';
-            page.render(filename);
+            await page.render(filename);
             renderedFiles.push(filename);
 
             slideId = await page.evaluate(function() { return sk.nextSlide(); });
