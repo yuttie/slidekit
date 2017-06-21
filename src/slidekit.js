@@ -1,14 +1,13 @@
-export default function slidekit(svgDoc) {
+export default function slidekit(svg) {
     'use strict';
 
     var currentIndex = 0;
 
     var module = {};
     module.gotoSlide = function(i) {
-        var s = svgDoc.querySelector('#slide-' + i);
+        var s = svg.querySelector('#slide-' + i);
         if (s) {
             currentIndex = i;
-            var svg = svgDoc.querySelector('svg');
             svg.removeAttribute('viewBox');  // reset the user coordinate system
             var bb = s.getBoundingClientRect();
             svg.setAttribute('viewBox', bb.left + ' ' + bb.top + ' ' + bb.width + ' ' + bb.height);

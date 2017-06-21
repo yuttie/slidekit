@@ -1,22 +1,22 @@
 import slidekit from './slidekit';
+import slidesSvg from './slides.svg';
 
-var sk;
-const slides = document.querySelector('#slides');
-slides.addEventListener('load', function(e) {
-    sk = slidekit(this.contentDocument);
+// Put the slides SVG inline
+document.write(slidesSvg);
 
-    // Move to the first slide
-    sk.gotoSlide(0);
+const sk = slidekit(document.querySelector('#slides'));
 
-    // Key bindings
-    document.addEventListener('keydown', function(e) {
-        if (e.keyCode === 0 || e.keyCode === 39) {
-            // next
-            sk.nextSlide();
-        }
-        else if (e.keyCode === 8 || e.keyCode === 37) {
-            // previous
-            sk.prevSlide();
-        }
-    });
+// Move to the first slide
+sk.gotoSlide(0);
+
+// Key bindings
+document.addEventListener('keydown', function(e) {
+    if (e.keyCode === 0 || e.keyCode === 39) {
+        // next
+        sk.nextSlide();
+    }
+    else if (e.keyCode === 8 || e.keyCode === 37) {
+        // previous
+        sk.prevSlide();
+    }
 });
