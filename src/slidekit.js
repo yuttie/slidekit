@@ -30,7 +30,7 @@ export default function slidekit(svg) {
       const bb = s.getBoundingClientRect();
 
       // Move the entire layer
-      layer.setAttribute('transform', `translate(${-bb.left}, ${-bb.top})`)
+      layer.style.transform = `translate(${-bb.left}px, ${-bb.top}px)`;
       svg.setAttribute('viewBox', `0 0 ${bb.width} ${bb.height}`);
       clipPathRect.setAttribute('x', bb.x);
       clipPathRect.setAttribute('y', bb.y);
