@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "build": "webpack",
+    "build-pdf": "tool/pdfify.js dist/index.html",
     "serve": "webpack-dev-server --content-base dist/ --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
