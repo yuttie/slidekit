@@ -9,9 +9,18 @@ export default function slidekit(svg) {
     var s = svg.querySelector('#slide-' + i);
     if (s) {
       currentIndex = i;
-      svg.removeAttribute('viewBox');  // reset the user coordinate system
+
+      // Reset the user coordinate system
+      svg.removeAttribute('viewBox');
+      let layer = svg.querySelector('#slides-layer');
+      layer.removeAttribute('transform');
+
+      // Get the bounding box of the slide
       var bb = s.getBoundingClientRect();
-      svg.setAttribute('viewBox', bb.left + ' ' + bb.top + ' ' + bb.width + ' ' + bb.height);
+
+      // Move the entire layer
+      layer.setAttribute('transform', `translate(${-bb.left}, ${-bb.top})`)
+      svg.setAttribute('viewBox', `0 0 ${bb.width} ${bb.height}`);
 
       return i;
     }
