@@ -6,8 +6,16 @@ document.write(slidesSvg);
 
 var sk = slidekit(document.querySelector('#slides'));
 
-// Move to the first slide
-sk.gotoSlide(0);
+if (location.hash) {
+    if (!sk.gotoSlide(location.hash.slice(1))) {
+        // Move to the first slide
+        sk.gotoSlide(0);
+    }
+}
+else {
+    // Move to the first slide
+    sk.gotoSlide(0);
+}
 
 // Key bindings
 document.addEventListener('keydown', function(e) {
