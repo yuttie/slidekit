@@ -2,15 +2,20 @@
   "name": "slidekit",
   "version": "0.0.0",
   "description": "",
+  "keywords": [],
+  "author": "Yuta Taniguchi <yuta.taniguchi.y.t@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/yuttie/slidekit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuttie/slidekit.git"
+  },
   "scripts": {
     "build": "webpack",
     "build-pdf": "tool/pdfify.js dist/index.html",
     "serve": "webpack-dev-server --content-base dist/ --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "Yuta Taniguchi <yuta.taniguchi.y.t@gmail.com>",
-  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.0",
