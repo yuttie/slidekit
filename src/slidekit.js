@@ -4,8 +4,12 @@ export default function slidekit(svg) {
   const layer = svg.querySelector('#slides-layer');
   layer.style.transition = 'transform ease 250ms';
 
+  const overview = svg.querySelector('#slide-overview');
+  overview.style.visibility = 'hidden';
+
   document.title = svg.querySelector('title').textContent;
   let currentIndex = 0;
+  let overviewReturnIndex = null;
 
   const module = {};
   module.showSlide = function(i) {
@@ -48,6 +52,18 @@ export default function slidekit(svg) {
   };
   module.prevSlide = function() {
     return module.gotoSlide(currentIndex - 1);
+  };
+  module.switchOverview = function() {
+    if (overviewReturnIndex === null) {
+      overviewReturnIndex = currentIndex;
+      currentIndex = 'overview';
+      sk.gotoSlide(currentIndex);
+    }
+    else {
+      currentIndex = overviewReturnIndex;
+      overviewReturnIndex = null;
+      sk.gotoSlide(currentIndex);
+    }
   };
 
   window.addEventListener('popstate', function(e) {

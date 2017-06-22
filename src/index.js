@@ -33,6 +33,10 @@ document.addEventListener('keydown', function(e) {
     // previous
     sk.prevSlide();
   }
+  else if (e.keyCode === 27) {
+    // overview
+    sk.switchOverview();
+  }
 });
 
 // Make `sk` global
