@@ -5,7 +5,7 @@ export default function slidekit(svg) {
     var currentIndex = 0;
 
     var module = {};
-    module.gotoSlide = function(i) {
+    module.showSlide = function(i) {
         var s = svg.querySelector('#slide-' + i);
         if (s) {
             currentIndex = i;
@@ -19,12 +19,31 @@ export default function slidekit(svg) {
             return false;
         }
     };
+    module.gotoSlide = function(i) {
+        const res = module.showSlide(i);
+        if (res !== false) {
+            const i = res;
+            if (history.state === null) {
+                window.history.replaceState(i, null, '#' + i);
+            }
+            else {
+                window.history.pushState(i, null, '#' + i);
+            }
+        }
+        return res;
+    };
     module.nextSlide = function() {
         return module.gotoSlide(currentIndex + 1);
     };
     module.prevSlide = function() {
         return module.gotoSlide(currentIndex - 1);
     };
+
+    window.addEventListener('popstate', function(e) {
+        if (e.state !== null) {
+            module.showSlide(e.state);
+        }
+    });
 
     return module;
 }

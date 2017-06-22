@@ -6,15 +6,18 @@ document.write(slidesSvg);
 
 var sk = slidekit(document.querySelector('#slides'));
 
-if (location.hash) {
-    if (!sk.gotoSlide(location.hash.slice(1))) {
+{
+    const i = parseInt(location.hash.slice(1), 10);
+    if (!Number.isNaN(i)) {
+        const res = sk.gotoSlide(i);
+        if (res === false) {
+            sk.gotoSlide(0);
+        }
+    }
+    else {
         // Move to the first slide
         sk.gotoSlide(0);
     }
-}
-else {
-    // Move to the first slide
-    sk.gotoSlide(0);
 }
 
 // Key bindings
