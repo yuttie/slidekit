@@ -1,3 +1,5 @@
+import "babel-polyfill";
+
 import slidekit from './slidekit';
 import slidesSvg from './slides.svg';
 
