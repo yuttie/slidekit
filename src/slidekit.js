@@ -1,6 +1,18 @@
 export default function slidekit(svg) {
   'use strict';
 
+  const layer = svg.querySelector('#slides-layer');
+  const clipPath = document.createElementNS('http://www.w3.org/2000/svg', 'clipPath');
+  const clipPathRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  clipPath.setAttribute('id','slidekit-viewport-clip');
+  clipPathRect.setAttribute('x', 0);
+  clipPathRect.setAttribute('y', 0);
+  clipPathRect.setAttribute('width', 0);
+  clipPathRect.setAttribute('height', 0);
+  clipPath.appendChild(clipPathRect);
+  svg.appendChild(clipPath);
+  layer.setAttribute('clip-path', 'url(#slidekit-viewport-clip)');
+
   document.title = svg.querySelector('title').textContent;
   var currentIndex = 0;
 
@@ -12,7 +24,6 @@ export default function slidekit(svg) {
 
       // Reset the user coordinate system
       svg.removeAttribute('viewBox');
-      let layer = svg.querySelector('#slides-layer');
       layer.removeAttribute('transform');
 
       // Get the bounding box of the slide
@@ -21,6 +32,10 @@ export default function slidekit(svg) {
       // Move the entire layer
       layer.setAttribute('transform', `translate(${-bb.left}, ${-bb.top})`)
       svg.setAttribute('viewBox', `0 0 ${bb.width} ${bb.height}`);
+      clipPathRect.setAttribute('x', bb.x);
+      clipPathRect.setAttribute('y', bb.y);
+      clipPathRect.setAttribute('width', bb.width);
+      clipPathRect.setAttribute('height', bb.height);
 
       return i;
     }
