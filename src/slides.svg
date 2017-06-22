@@ -32,7 +32,7 @@
      inkscape:cx="-991.08384"
      inkscape:cy="531.88956"
      inkscape:document-units="px"
-     inkscape:current-layer="svg11208"
+     inkscape:current-layer="g8230"
      showgrid="true"
      inkscape:window-width="1854"
      inkscape:window-height="990"
@@ -228,11 +228,12 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Templates"
+     inkscape:label="templates"
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-284.36219)"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <g
        id="slide-template"
        inkscape:label="#g15991"
@@ -309,7 +310,7 @@
            x="-2849.6611"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0086ab;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            xml:space="preserve"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:60px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:'Raleway Ultra-Bold';fill:#0086ab;fill-opacity:1"
+             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:60px;line-height:1.25;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Light';fill:#0086ab;fill-opacity:1"
              y="952.612"
              x="-2849.6611"
              id="tspan15179"
@@ -346,7 +347,7 @@
            x="-1240.0359"
            style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0086ab;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            xml:space="preserve"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:80px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:'Raleway Ultra-Bold';text-align:center;text-anchor:middle;fill:#0086ab;fill-opacity:1"
+             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:80px;line-height:1.25;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Light';text-align:center;text-anchor:middle;fill:#0086ab;fill-opacity:1"
              y="1069.2877"
              x="-1240.0359"
              id="tspan4244"
@@ -357,18 +358,11 @@
            x="-1237.2416"
            style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            xml:space="preserve"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;text-align:center;text-anchor:middle"
+             style="font-style:normal;font-variant:normal;font-weight:200;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Ultra-Light';text-align:center;text-anchor:middle"
              y="1245.6436"
              x="-1237.2416"
              id="tspan4248"
-             sodipodi:role="line">Author's Name</tspan></text>
-        <rect
-           y="1092.0868"
-           x="-1749.9403"
-           height="11.6923"
-           width="1024.0007"
-           id="rect4298"
-           style="fill:#edad0b;fill-opacity:1" />
+             sodipodi:role="line">Author Name</tspan></text>
       </g>
       <text
          id="text4252"
@@ -537,104 +531,73 @@
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="Slides"
+     inkscape:label="slides"
      style="display:inline">
     <g
-       transform="translate(4045.2968,-53.796593)"
-       inkscape:label="slide-1"
-       id="slide-1"
+       style="display:inline"
+       id="slide-0"
+       inkscape:label="title-slide"
+       transform="translate(1756.3466,214.06707)"
        class="slide">
       <use
-         x="0"
-         y="0"
-         xlink:href="#TMP-background"
-         id="use27205"
-         transform="translate(-1325.2968,729.4344)"
-         width="100%"
+         inkscape:label="title-slide-background"
          height="100%"
-         inkscape:label="#use4149" />
+         width="100%"
+         transform="translate(-149.9403,589.57074)"
+         id="use8510"
+         xlink:href="#TMP-background"
+         y="0"
+         x="0" />
       <text
-         inkscape:label="#slide-title"
-         id="text27207"
-         y="952.612"
-         x="-2849.6611"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0086ab;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:60px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:'Raleway Ultra-Bold';fill:#0086ab;fill-opacity:1"
-           y="952.612"
-           x="-2849.6611"
-           id="tspan27209"
-           sodipodi:role="line">Slide Title</tspan></text>
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0086ab;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-1240.0359"
+         y="1069.2877"
+         id="text8514"><tspan
+           sodipodi:role="line"
+           id="tspan8512"
+           x="-1240.0359"
+           y="1069.2877"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:80px;line-height:1.25;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Light';text-align:center;text-anchor:middle;fill:#0086ab;fill-opacity:1">Presentation Title</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-1237.2416"
+         y="1245.6436"
+         id="text8518"><tspan
+           sodipodi:role="line"
+           id="tspan8516"
+           x="-1237.2416"
+           y="1245.6436"
+           style="font-style:normal;font-variant:normal;font-weight:200;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Ultra-Light';text-align:center;text-anchor:middle">Author Name</tspan></text>
     </g>
     <g
-       transform="translate(1749.9403,86.067067)"
-       inkscape:label="slide-0"
-       id="slide-0"
+       style="display:inline"
+       id="slide-1"
+       inkscape:label="slide-n"
+       transform="translate(4205.2968,74.203407)"
        class="slide">
       <use
-         x="0"
-         y="0"
-         xlink:href="#TMP-background"
-         id="use27213"
-         transform="translate(-149.9403,589.57074)"
-         width="100%"
+         inkscape:label="#use4149"
          height="100%"
-         inkscape:label="#use4189" />
+         width="100%"
+         transform="translate(-1325.2968,729.4344)"
+         id="use8552"
+         xlink:href="#TMP-background"
+         y="0"
+         x="0" />
       <text
-         id="text27215"
-         y="1069.2877"
-         x="-1240.0359"
-         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0086ab;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:80px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:'Raleway Ultra-Bold';text-align:center;text-anchor:middle;fill:#0086ab;fill-opacity:1"
-           y="1069.2877"
-           x="-1240.0359"
-           id="tspan27217"
-           sodipodi:role="line">Presentation Title</tspan></text>
-      <text
-         id="text27219"
-         y="1245.6436"
-         x="-1237.2416"
-         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;text-align:center;text-anchor:middle"
-           y="1245.6436"
-           x="-1237.2416"
-           id="tspan27221"
-           sodipodi:role="line">Author's Name</tspan></text>
-      <rect
-         y="1092.0868"
-         x="-1749.9403"
-         height="11.6923"
-         width="1024.0007"
-         id="rect27223"
-         style="fill:#edad0b;fill-opacity:1" />
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0086ab;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-2849.6611"
+         y="952.612"
+         id="text8556"
+         inkscape:label="#slide-title"><tspan
+           sodipodi:role="line"
+           id="tspan8554"
+           x="-2849.6611"
+           y="952.612"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:60px;line-height:1.25;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Light';fill:#0086ab;fill-opacity:1">Slide Title</tspan></text>
     </g>
   </g>
-  <rect
-     x="0"
-     y="0"
-     width="1024"
-     height="768"
-     style="fill: #00ff00;"
-     id="stage"
-     inkscape:label="stage" />
-  <circle
-     r="13.112195"
-     cx="0"
-     cy="0"
-     id="center-circle"
-     style="fill:#ff0000;" />
-  <circle
-     r="13.112195"
-     cx="1024"
-     cy="768"
-     id="circle97"
-     style="fill:#ff0000;" />
-  <circle
-     style="fill:#ff0000"
-     id="circle8508"
-     cy="0"
-     cx="1024"
-     r="13.112195" />
 </svg>
