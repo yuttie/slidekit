@@ -14,11 +14,11 @@ export default function slidekit(svg) {
   layer.setAttribute('clip-path', 'url(#slidekit-viewport-clip)');
 
   document.title = svg.querySelector('title').textContent;
-  var currentIndex = 0;
+  let currentIndex = 0;
 
-  var module = {};
+  const module = {};
   module.showSlide = function(i) {
-    var s = svg.querySelector('#slide-' + i);
+    const s = svg.querySelector('#slide-' + i);
     if (s) {
       currentIndex = i;
 
@@ -27,7 +27,7 @@ export default function slidekit(svg) {
       layer.removeAttribute('transform');
 
       // Get the bounding box of the slide
-      var bb = s.getBoundingClientRect();
+      const bb = s.getBoundingClientRect();
 
       // Move the entire layer
       layer.setAttribute('transform', `translate(${-bb.left}, ${-bb.top})`)
