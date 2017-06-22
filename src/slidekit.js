@@ -2,6 +2,7 @@ export default function slidekit(svg) {
   'use strict';
 
   const layer = svg.querySelector('#slides-layer');
+  layer.style.transition = 'transform ease 250ms';
   const clipPath = document.createElementNS('http://www.w3.org/2000/svg', 'clipPath');
   const clipPathRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
   clipPath.setAttribute('id','slidekit-viewport-clip');
