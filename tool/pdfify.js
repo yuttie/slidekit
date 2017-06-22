@@ -1,3 +1,4 @@
+'use strict';
 const process = require('process');
 const util = require('util');
 const execFile = util.promisify(require('child_process').execFile);
