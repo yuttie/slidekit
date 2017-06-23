@@ -1,8 +1,9 @@
+import anime from 'animejs';
+
 export default function slidekit(svg) {
   'use strict';
 
   const layer = svg.querySelector('#slides-layer');
-  layer.style.transition = 'transform ease 250ms';
 
   const overview = svg.querySelector('#slide-overview');
   overview.style.visibility = 'hidden';
@@ -17,6 +18,9 @@ export default function slidekit(svg) {
     if (s) {
       currentIndex = i;
 
+      // Save the current viewBox
+      const viewBox = svg.getAttribute('viewBox');
+
       // Reset the user coordinate system
       svg.removeAttribute('viewBox');
       layer.removeAttribute('transform');
@@ -24,9 +28,23 @@ export default function slidekit(svg) {
       // Get the bounding box of the slide
       const bb = s.getBoundingClientRect();
 
+      // Restore the viewBox
+      svg.setAttribute('viewBox', viewBox);
+
       // Move the entire layer
-      layer.style.transform = `translate(${-bb.left}px, ${-bb.top}px)`;
-      svg.setAttribute('viewBox', `0 0 ${bb.width} ${bb.height}`);
+      anime({
+        targets: svg,
+        viewBox: `0 0 ${bb.width} ${bb.height}`,
+        easing: 'easeOutExpo',
+        duration: 500
+      });
+      anime({
+        targets: layer,
+        translateX: -bb.left,
+        translateY: -bb.top,
+        easing: 'easeOutExpo',
+        duration: 500
+      });
 
       return i;
     }

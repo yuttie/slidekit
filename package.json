@@ -25,6 +25,7 @@
     "webpack-dev-server": "^2.5.0"
   },
   "dependencies": {
+    "animejs": "^2.0.2",
     "babel-polyfill": "^6.23.0",
     "phantom": "^4.0.4"
   }
