@@ -8,7 +8,9 @@ export default function slidekit(svg) {
   const overview = svg.querySelector('#slide-overview');
   overview.style.visibility = 'hidden';
 
-  document.title = svg.querySelector('title').textContent;
+  const svgTitle = svg.querySelector('title');
+  document.title = svgTitle.textContent;
+  svgTitle.parentNode.removeChild(svgTitle);
   let currentIndex = 0;
   let overviewReturnIndex = null;
 
