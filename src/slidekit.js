@@ -20,16 +20,18 @@ export default function slidekit(svg) {
 
       // Save the current viewBox
       const viewBox = svg.getAttribute('viewBox');
+      const transform = layer.style.getPropertyValue('transform');
 
       // Reset the user coordinate system
       svg.removeAttribute('viewBox');
-      layer.removeAttribute('transform');
+      layer.style.removeProperty('transform');
 
       // Get the bounding box of the slide
       const bb = s.getBoundingClientRect();
 
       // Restore the viewBox
       svg.setAttribute('viewBox', viewBox);
+      layer.style.setProperty('transform', transform);
 
       // Move the entire layer
       anime({
