@@ -1,6 +1,7 @@
 'use strict';
 import "babel-polyfill";
 
+import './index.css';
 import slidekit from './slidekit';
 import slidesSvg from './slides.svg';
 
