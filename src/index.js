@@ -38,6 +38,10 @@ document.addEventListener('keydown', function(e) {
     // overview
     sk.switchOverview();
   }
+  else if (e.keyCode === 66) {
+    // blur
+    sk.switchBlur();
+  }
 });
 
 // Make `sk` global

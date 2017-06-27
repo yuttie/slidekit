@@ -13,6 +13,7 @@ export default function slidekit(svg) {
   svgTitle.parentNode.removeChild(svgTitle);
   let currentIndex = 0;
   let overviewReturnIndex = null;
+  let blur = { value: '0px' };
 
   const module = {};
   module.showSlide = function(i) {
@@ -85,6 +86,31 @@ export default function slidekit(svg) {
       currentIndex = overviewReturnIndex;
       overviewReturnIndex = null;
       sk.gotoSlide(currentIndex);
+    }
+  };
+  module.switchBlur = function() {
+    if (blur.value !== '0px') {
+      anime({
+        targets: blur,
+        value: '0px',
+        easing: 'linear',
+        duration: 100,
+        update: function() {
+          svg.style.filter = `blur(${blur.value})`
+        }
+      });
+    }
+    else {
+      blur = { value: '0px' };
+      anime({
+        targets: blur,
+        value: '10px',
+        easing: 'linear',
+        duration: 100,
+        update: function() {
+          svg.style.filter = `blur(${blur.value})`
+        }
+      });
     }
   };
 
