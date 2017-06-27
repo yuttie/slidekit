@@ -101,7 +101,6 @@ export default function slidekit(svg) {
       });
     }
     else {
-      blur = { value: '0px' };
       anime({
         targets: blur,
         value: '10px',
