@@ -13,7 +13,7 @@ export default function slidekit(svg) {
   svgTitle.parentNode.removeChild(svgTitle);
   let currentIndex = 0;
   let overviewReturnIndex = null;
-  let blur = { value: '0px' };
+  let blur = { value: '0px', direction: 0 };
 
   const module = {};
   module.showSlide = function(i) {
@@ -89,7 +89,9 @@ export default function slidekit(svg) {
     }
   };
   module.switchBlur = function() {
-    if (blur.value !== '0px') {
+    anime.remove(blur);
+    if (blur.value !== '0px' && blur.direction !== -1) {
+      blur.direction = -1;
       anime({
         targets: blur,
         value: '0px',
@@ -101,6 +103,7 @@ export default function slidekit(svg) {
       });
     }
     else {
+      blur.direction = +1;
       anime({
         targets: blur,
         value: '10px',
