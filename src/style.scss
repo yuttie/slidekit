@@ -6,14 +6,7 @@ html, body {
   overflow: hidden;
 }
 html {
-  display: flex;
-  flex-direction: column;
   background: #000;
-}
-html::before,
-html::after {
-  flex: 1 1;
-  content: "";
 }
 #slides {
   width: 100%;
