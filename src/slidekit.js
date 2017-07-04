@@ -15,6 +15,23 @@ export default function slidekit(svg) {
   let overviewReturnIndex = null;
   let blur = { value: '0px', direction: 0 };
 
+  // Workaround for Firefox
+  for (let path of svg.querySelectorAll('path')) {
+    if (path.style.strokeMiterlimit > 100) {
+      path.style.strokeMiterlimit = 100;
+    }
+  }
+  for (let tspan of svg.querySelectorAll('tspan')) {
+    if (tspan.textContent === '') {
+      tspan.parentNode.removeChild(tspan);
+    }
+  }
+  for (let text of svg.querySelectorAll('text')) {
+    if (text.textContent === '') {
+      text.parentNode.removeChild(text);
+    }
+  }
+
   const module = {};
   module.showSlide = function(i) {
     const s = svg.querySelector('#slide-' + i);
@@ -29,8 +46,18 @@ export default function slidekit(svg) {
       svg.removeAttribute('viewBox');
       layer.style.removeProperty('transform');
 
+      // Workaround for Firefox
+      for (let symbol of svg.querySelectorAll('symbol')) {
+        symbol.style.display = 'none';
+      }
+
       // Get the bounding box of the slide
       const bb = s.getBoundingClientRect();
+
+      // Workaround for Firefox
+      for (let symbol of svg.querySelectorAll('symbol')) {
+        symbol.style.display = null;
+      }
 
       // Restore the viewBox
       svg.setAttribute('viewBox', viewBox);
