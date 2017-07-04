@@ -26,11 +26,11 @@ var sk = slidekit(document.querySelector('#slides'));
 
 // Key bindings
 document.addEventListener('keydown', function(e) {
-  if (e.keyCode === 0 || e.keyCode === 39) {
+  if (e.keyCode === 32 || e.keyCode === 39 || e.keyCode === 34) {
     // next
     sk.nextSlide();
   }
-  else if (e.keyCode === 8 || e.keyCode === 37) {
+  else if (e.keyCode === 8 || e.keyCode === 37 || e.keyCode === 33) {
     // previous
     sk.prevSlide();
   }
