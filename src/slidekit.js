@@ -149,5 +149,15 @@ export default function slidekit(svg) {
     }
   });
 
+  for (let slide of svg.querySelectorAll('[id^="slide-"]')) {
+    let slide = slide;
+    slide.addEventListener('click', e => {
+      if (overviewReturnIndex !== null) {
+        overviewReturnIndex = slide.id.slice('slide-'.length);
+        module.switchOverview();
+      }
+    });
+  }
+
   return module;
 }
