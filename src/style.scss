@@ -8,9 +8,26 @@ html, body {
 html {
   background: #000;
 }
+
 #slides {
   width: 100%;
   height: 100%;
+}
+
+#slides .not-match {
+  opacity: 0 !important;
+}
+
+#slides .hidden {
+  visibility: hidden !important;
+}
+
+#slides .unstaged {
+  display: none !important;
+}
+
+#slides .untransformed {
+  transform: initial !important;
 }
 
 .centering-container {

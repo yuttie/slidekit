@@ -6,7 +6,7 @@ export default function slidekit(svg) {
   const layer = svg.querySelector('#slides-layer');
 
   const overview = svg.querySelector('#slide-overview');
-  overview.style.visibility = 'hidden';
+  overview.classList.add('hidden');
 
   const svgTitle = svg.querySelector('title');
   document.title = svgTitle.textContent;
@@ -40,15 +40,14 @@ export default function slidekit(svg) {
 
       // Save the current viewBox
       const viewBox = svg.getAttribute('viewBox');
-      const transform = layer.style.getPropertyValue('transform');
 
       // Reset the user coordinate system
       svg.removeAttribute('viewBox');
-      layer.style.removeProperty('transform');
+      layer.classList.add('untransformed');
 
       // Workaround for Firefox
       for (let symbol of svg.querySelectorAll('symbol')) {
-        symbol.style.display = 'none';
+        symbol.classList.add('unstaged');
       }
 
       // Get the bounding box of the slide
@@ -56,12 +55,12 @@ export default function slidekit(svg) {
 
       // Workaround for Firefox
       for (let symbol of svg.querySelectorAll('symbol')) {
-        symbol.style.display = null;
+        symbol.classList.remove('unstaged');
       }
 
       // Restore the viewBox
       svg.setAttribute('viewBox', viewBox);
-      layer.style.setProperty('transform', transform);
+      layer.classList.remove('untransformed');
 
       // Move the entire layer
       anime({
@@ -144,12 +143,12 @@ export default function slidekit(svg) {
   };
   module.query = function(query) {
     const qs = query.toLowerCase().split(/\s+/);
-    for (let slide of svg.querySelectorAll('g')) {
-      if (qs.every(q => slide.textContent.toLowerCase().indexOf(q) !== -1)) {
-        slide.style.opacity = null;
+    for (let elem of svg.querySelectorAll('g')) {
+      if (qs.every(q => elem.textContent.toLowerCase().indexOf(q) === -1)) {
+        elem.classList.add('not-match');
       }
       else {
-        slide.style.opacity = '0.0';
+        elem.classList.remove('not-match');
       }
     }
   };
