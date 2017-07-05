@@ -24,6 +24,21 @@ var sk = slidekit(document.querySelector('#slides'));
   }
 }
 
+const qbox = document.querySelector('#querybox');
+qbox.addEventListener('keydown', function(e) {
+  if (e.keyCode === 27) {
+    const qbox = e.target;
+    qbox.value = '';
+    qbox.blur();
+    sk.query(qbox.value);
+  }
+});
+
+qbox.addEventListener('input', function(e) {
+  const qbox = e.target;
+  sk.query(qbox.value);
+});
+
 // Key bindings
 document.addEventListener('keydown', function(e) {
   if (e.target.tagName === 'BODY') {
@@ -42,6 +57,12 @@ document.addEventListener('keydown', function(e) {
     else if (e.keyCode === 66) {
       // blur
       sk.switchBlur();
+    }
+    else if (e.keyCode === 191) {
+      // search
+      const qbox = document.querySelector('#querybox');
+      qbox.focus();
+      e.preventDefault();
     }
   }
 });
