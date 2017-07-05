@@ -143,7 +143,7 @@ export default function slidekit(svg) {
   };
   module.query = function(query) {
     const qs = query.toLowerCase().split(/\s+/);
-    for (let elem of svg.querySelectorAll('g')) {
+    for (let elem of svg.querySelectorAll('text')) {
       if (qs.every(q => elem.textContent.toLowerCase().indexOf(q) === -1)) {
         elem.classList.add('not-match');
       }
