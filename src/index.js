@@ -26,21 +26,23 @@ var sk = slidekit(document.querySelector('#slides'));
 
 // Key bindings
 document.addEventListener('keydown', function(e) {
-  if (e.keyCode === 32 || e.keyCode === 39 || e.keyCode === 34) {
-    // next
-    sk.nextSlide();
-  }
-  else if (e.keyCode === 8 || e.keyCode === 37 || e.keyCode === 33) {
-    // previous
-    sk.prevSlide();
-  }
-  else if (e.keyCode === 27) {
-    // overview
-    sk.switchOverview();
-  }
-  else if (e.keyCode === 66) {
-    // blur
-    sk.switchBlur();
+  if (e.target.tagName === 'BODY') {
+    if (e.keyCode === 32 || e.keyCode === 39 || e.keyCode === 34) {
+      // next
+      sk.nextSlide();
+    }
+    else if (e.keyCode === 8 || e.keyCode === 37 || e.keyCode === 33) {
+      // previous
+      sk.prevSlide();
+    }
+    else if (e.keyCode === 27) {
+      // overview
+      sk.switchOverview();
+    }
+    else if (e.keyCode === 66) {
+      // blur
+      sk.switchBlur();
+    }
   }
 });
 
