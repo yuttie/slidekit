@@ -142,6 +142,17 @@ export default function slidekit(svg) {
       });
     }
   };
+  module.query = function(query) {
+    const qs = query.split(/\s+/);
+    for (let slide of svg.querySelectorAll('g')) {
+      if (qs.every(q => slide.textContent.indexOf(q) !== -1)) {
+        slide.style.opacity = null;
+      }
+      else {
+        slide.style.opacity = '0.0';
+      }
+    }
+  };
 
   window.addEventListener('popstate', function(e) {
     if (e.state !== null) {
