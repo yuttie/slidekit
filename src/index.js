@@ -58,6 +58,10 @@ document.addEventListener('keydown', function(e) {
       // blur
       sk.switchBlur();
     }
+    else if (e.keyCode === 80) {
+      // blur
+      sk.switchPresenterMode();
+    }
     else if (e.keyCode === 191) {
       // search
       const qbox = document.querySelector('#querybox');

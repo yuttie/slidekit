@@ -141,6 +141,9 @@ export default function slidekit(svg) {
       });
     }
   };
+  module.switchPresenterMode = function() {
+    document.body.classList.toggle('presenter-mode');
+  };
   module.query = function(query) {
     const qs = query.toLowerCase().split(/\s+/);
     for (let elem of svg.querySelectorAll('text')) {
