@@ -32,6 +32,19 @@ module.exports = {
           loader: 'svg-inline-loader',
           options: {}
         }
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader'
+          },
+          {
+            loader: 'markdown-loader',
+            options: {
+            }
+          }
+        ]
       }
     ]
   },

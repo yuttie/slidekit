@@ -4,9 +4,13 @@ import "babel-polyfill";
 import './style.scss';
 import slidekit from './slidekit';
 import slidesSvg from './slides.svg';
+import speech from './speech.md';
 
 // Put the slides SVG inline
 document.write(slidesSvg);
+
+const presenterPane = document.querySelector('#presenter-pane');
+presenterPane.innerHTML = speech;
 
 var sk = slidekit(document.querySelector('#slides'));
 
