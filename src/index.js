@@ -75,5 +75,16 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+document.addEventListener('mousewheel', function(e) {
+  if (e.wheelDelta > 0) {
+      // next
+      sk.nextSlide();
+  }
+  else if (e.wheelDelta < 0) {
+      // previous
+      sk.prevSlide();
+  }
+});
+
 // Make `sk` global
 window.sk = sk;
