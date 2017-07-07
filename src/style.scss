@@ -12,7 +12,7 @@ html {
 #slides {
   width: 100%;
   height: 100%;
-  transition: width ease 1000ms;
+  transition: width ease 500ms;
 }
 
 body.presenter-mode #slides {
@@ -42,7 +42,7 @@ body.presenter-mode #slides {
   width: 0%;
   height: 100%;
   background-color: white;
-  transition: width ease 1000ms;
+  transition: width ease 500ms;
 }
 
 body.presenter-mode #presenter-pane {
