@@ -66,14 +66,14 @@ export default function slidekit(svg) {
       anime({
         targets: svg,
         viewBox: `0 0 ${bb.width} ${bb.height}`,
-        easing: 'easeOutExpo',
+        easing: 'easeOutQuad',
         duration: 500
       });
       anime({
         targets: layer,
         translateX: -bb.left,
         translateY: -bb.top,
-        easing: 'easeOutExpo',
+        easing: 'easeOutQuad',
         duration: 500
       });
 
