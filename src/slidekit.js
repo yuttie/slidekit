@@ -14,6 +14,7 @@ export default function slidekit(svg) {
   let currentIndex = 0;
   let overviewReturnIndex = null;
   let blur = { value: '0px', direction: 0 };
+  const syncWindows = [];
 
   // Workaround for Firefox
   for (let path of svg.querySelectorAll('path')) {
@@ -94,6 +95,11 @@ export default function slidekit(svg) {
         window.history.pushState(i, null, '#' + i);
       }
     }
+
+    for (let win of syncWindows) {
+      win.sk.gotoSlide(i);
+    }
+
     return res;
   };
   module.nextSlide = function() {
@@ -154,6 +160,9 @@ export default function slidekit(svg) {
         elem.classList.remove('not-match');
       }
     }
+  };
+  module.registerSyncWindow = function(win) {
+    syncWindows.push(win);
   };
 
   window.addEventListener('popstate', function(e) {

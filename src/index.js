@@ -66,6 +66,11 @@ document.addEventListener('keydown', function(e) {
       // blur
       sk.switchPresenterMode();
     }
+    else if (e.keyCode === 67) {
+      // clone
+      const win = window.open(window.location.hash);
+      sk.registerSyncWindow(win);
+    }
     else if (e.keyCode === 191) {
       // search
       const qbox = document.querySelector('#querybox');
