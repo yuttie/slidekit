@@ -47,10 +47,10 @@ export default class SlideKit {
     });
 
     for (let slide of this.svg.querySelectorAll('[id^="slide-"]')) {
-      let s = slide;
+      let slideIndex = slide.id.slice('slide-'.length);
       slide.addEventListener('click', e => {
         if (self.overviewReturnIndex !== null) {
-          self.overviewReturnIndex = s.id.slice('slide-'.length);
+          self.overviewReturnIndex = slideIndex;
           self.switchOverview();
         }
       });
