@@ -7,17 +7,21 @@ const extractSass = new ExtractTextPlugin({
 });
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  devtool: 'inline-source-map',
+  resolve: {
+    extensions: [".ts", ".js", ".json"]
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: "babel-loader"
+        test: /\.ts$/,
+        use: "ts-loader",
+        exclude: /node_modules/
       },
       {
         test: /\.scss$/,

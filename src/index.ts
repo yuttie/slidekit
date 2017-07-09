@@ -3,16 +3,16 @@ import "babel-polyfill";
 
 import './style.scss';
 import slidekit from './slidekit';
-import slidesSvg from './slides.svg';
-import speech from './speech.md';
+const slidesSvg = require('./slides.svg');
+const speech = require('./speech.md');
 
 // Put the slides SVG inline
 document.write(slidesSvg);
 
-const presenterPane = document.querySelector('#presenter-pane');
+const presenterPane = document.querySelector('#presenter-pane') as Element;
 presenterPane.innerHTML = speech;
 
-var sk = slidekit(document.querySelector('#slides'));
+var sk = slidekit(document.querySelector('#slides') as SVGSVGElement);
 
 {
   const i = parseInt(location.hash.slice(1), 10);
@@ -28,24 +28,24 @@ var sk = slidekit(document.querySelector('#slides'));
   }
 }
 
-const qbox = document.querySelector('#querybox');
-qbox.addEventListener('keydown', function(e) {
+const qbox = document.querySelector('#querybox') as HTMLInputElement;
+qbox.addEventListener('keydown', function(e: KeyboardEvent) {
   if (e.keyCode === 27) {
-    const qbox = e.target;
+    const qbox = e.target as HTMLInputElement;
     qbox.value = '';
     qbox.blur();
     sk.query(qbox.value);
   }
 });
 
-qbox.addEventListener('input', function(e) {
-  const qbox = e.target;
+qbox.addEventListener('input', function(e: Event) {
+  const qbox = e.target as HTMLInputElement;
   sk.query(qbox.value);
 });
 
 // Key bindings
-document.addEventListener('keydown', function(e) {
-  if (e.target.tagName === 'BODY') {
+document.addEventListener('keydown', function(e: KeyboardEvent) {
+  if ((e.target as Element).tagName === 'BODY') {
     if (e.keyCode === 32 || e.keyCode === 39 || e.keyCode === 34) {
       // next
       sk.nextSlide();
@@ -73,7 +73,7 @@ document.addEventListener('keydown', function(e) {
     }
     else if (e.keyCode === 191) {
       // search
-      const qbox = document.querySelector('#querybox');
+      const qbox = document.querySelector('#querybox') as HTMLInputElement;
       qbox.focus();
       e.preventDefault();
     }
@@ -92,4 +92,4 @@ document.addEventListener('mousewheel', function(e) {
 });
 
 // Make `sk` global
-window.sk = sk;
+(window as any).sk = sk;
