@@ -80,12 +80,12 @@ document.addEventListener('keydown', function(e: KeyboardEvent) {
   }
 });
 
-document.addEventListener('mousewheel', function(e) {
-  if (e.wheelDelta > 0) {
+document.addEventListener('wheel', function(e) {
+  if (e.deltaY > 0) {
       // next
       sk.nextSlide();
   }
-  else if (e.wheelDelta < 0) {
+  else if (e.deltaY < 0) {
       // previous
       sk.prevSlide();
   }
