@@ -2,7 +2,7 @@
 import "babel-polyfill";
 
 import './style.scss';
-import slidekit from './slidekit';
+import SlideKit from './slidekit';
 const slidesSvg = require('./slides.svg');
 const speech = require('./speech.md');
 
@@ -12,7 +12,7 @@ document.write(slidesSvg);
 const presenterPane = document.querySelector('#presenter-pane') as Element;
 presenterPane.innerHTML = speech;
 
-var sk = slidekit(document.querySelector('#slides') as SVGSVGElement);
+var sk = new SlideKit(document.querySelector('#slides') as SVGSVGElement);
 
 {
   const i = parseInt(location.hash.slice(1), 10);
