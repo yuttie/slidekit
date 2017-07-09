@@ -49,27 +49,33 @@ document.addEventListener('keydown', function(e: KeyboardEvent) {
     if (e.keyCode === 32 || e.keyCode === 39 || e.keyCode === 34) {
       // next
       sk.nextSlide();
+      e.preventDefault();
     }
     else if (e.keyCode === 8 || e.keyCode === 37 || e.keyCode === 33) {
       // previous
       sk.prevSlide();
+      e.preventDefault();
     }
     else if (e.keyCode === 27) {
       // overview
       sk.switchOverview();
+      e.preventDefault();
     }
     else if (e.keyCode === 66) {
       // blur
       sk.switchBlur();
+      e.preventDefault();
     }
     else if (e.keyCode === 80) {
       // blur
       sk.switchPresenterMode();
+      e.preventDefault();
     }
     else if (e.keyCode === 67) {
       // clone
       const win = window.open(window.location.hash);
       sk.registerSyncWindow(win);
+      e.preventDefault();
     }
     else if (e.keyCode === 191) {
       // search
@@ -84,10 +90,12 @@ document.addEventListener('wheel', function(e) {
   if (e.deltaY > 0) {
       // next
       sk.nextSlide();
+      e.preventDefault();
   }
   else if (e.deltaY < 0) {
       // previous
       sk.prevSlide();
+      e.preventDefault();
   }
 });
 
