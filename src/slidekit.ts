@@ -102,14 +102,14 @@ export default class SlideKit {
       anime({
         targets: this.svg,
         viewBox: `0 0 ${bb.width} ${bb.height}`,
-        easing: 'easeOutQuad',
+        easing: 'easeOutSine',
         duration: 500
       });
       anime({
         targets: this.layer,
         translateX: -fixSmallNumber(bb.left),
         translateY: -fixSmallNumber(bb.top),
-        easing: 'easeOutQuad',
+        easing: 'easeOutSine',
         duration: 500
       });
 
