@@ -1,6 +1,4 @@
 'use strict';
-import "babel-polyfill";
-
 import './style.scss';
 import SlideKit from './slidekit';
 const slidesSvg = require('./slides.svg');
