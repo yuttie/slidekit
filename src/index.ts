@@ -5,7 +5,7 @@ const slidesSvg = require('./slides.svg');
 const speech = require('./speech.md');
 
 // Put the slides SVG inline
-let svg = document.createRange().createContextualFragment(slidesSvg).firstChild as SVGSVGElement;
+const svg = document.createRange().createContextualFragment(slidesSvg).firstChild as SVGSVGElement;
 document.body.appendChild(svg);
 
 const presenterPane = document.querySelector('#presenter-pane') as Element;
