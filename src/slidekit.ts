@@ -1,6 +1,18 @@
 'use strict';
 import * as anime from 'animejs';
 
+// Workaround for Chrome
+// With Chrome browser, Anime.js doesn't seem to begin animation correctly if
+// an initial value of translate{X,Y} is less than 1e-4.
+function fixSmallNumber(x: number) {
+  if (Math.abs(x) < 1e-4) {
+    return 0;
+  }
+  else {
+    return x;
+  }
+}
+
 export default class SlideKit {
   private layer: SVGElement;
   private currentIndex: number | string;
@@ -95,8 +107,8 @@ export default class SlideKit {
       });
       anime({
         targets: this.layer,
-        translateX: -bb.left,
-        translateY: -bb.top,
+        translateX: -fixSmallNumber(bb.left),
+        translateY: -fixSmallNumber(bb.top),
         easing: 'easeOutQuad',
         duration: 500
       });
