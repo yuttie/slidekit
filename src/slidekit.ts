@@ -171,6 +171,7 @@ export default class SlideKit {
   }
 
   switchBlur() {
+    const self = this;
     anime.remove(this.blur);
     if (this.blur.value !== '0px' && this.blur.direction !== -1) {
       this.blur.direction = -1;
@@ -180,7 +181,7 @@ export default class SlideKit {
         easing: 'linear',
         duration: 100,
         update: function() {
-          this.svg.style.filter = `blur(${this.blur.value})`
+          self.svg.style.filter = `blur(${self.blur.value})`
         }
       });
     }
@@ -192,7 +193,7 @@ export default class SlideKit {
         easing: 'linear',
         duration: 100,
         update: function() {
-          this.svg.style.filter = `blur(${this.blur.value})`
+          self.svg.style.filter = `blur(${self.blur.value})`
         }
       });
     }
