@@ -29,7 +29,7 @@ var sk = new SlideKit(document.querySelector('#slides') as SVGSVGElement);
 
 const qbox = document.querySelector('#querybox') as HTMLInputElement;
 qbox.addEventListener('keydown', function(e: KeyboardEvent) {
-  if (e.keyCode === 27) {
+  if (e.key === 'Escape') {
     const qbox = e.target as HTMLInputElement;
     qbox.value = '';
     qbox.blur();
@@ -45,38 +45,38 @@ qbox.addEventListener('input', function(e: Event) {
 // Key bindings
 document.addEventListener('keydown', function(e: KeyboardEvent) {
   if ((e.target as Element).tagName === 'BODY') {
-    if (e.keyCode === 32 || e.keyCode === 39 || e.keyCode === 34) {
+    if (e.key === ' ' || e.key === 'ArrowRight' || e.key === 'PageDown') {
       // next
       sk.nextSlide();
       e.preventDefault();
     }
-    else if (e.keyCode === 8 || e.keyCode === 37 || e.keyCode === 33) {
+    else if (e.key === 'Backspace' || e.key === 'ArrowLeft' || e.key === 'PageUp') {
       // previous
       sk.prevSlide();
       e.preventDefault();
     }
-    else if (e.keyCode === 27) {
+    else if (e.key === 'Escape') {
       // overview
       sk.switchOverview();
       e.preventDefault();
     }
-    else if (e.keyCode === 66) {
+    else if (e.key === 'b') {
       // blur
       sk.switchBlur();
       e.preventDefault();
     }
-    else if (e.keyCode === 80) {
+    else if (e.key === 'p') {
       // blur
       sk.switchPresenterMode();
       e.preventDefault();
     }
-    else if (e.keyCode === 67) {
+    else if (e.key === 'c') {
       // clone
       const win = window.open(window.location.hash);
       sk.registerSyncWindow(win);
       e.preventDefault();
     }
-    else if (e.keyCode === 191) {
+    else if (e.key === '/') {
       // search
       const qbox = document.querySelector('#querybox') as HTMLInputElement;
       qbox.focus();
