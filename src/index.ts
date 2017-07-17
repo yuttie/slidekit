@@ -11,7 +11,7 @@ document.body.appendChild(svg);
 const presenterPane = document.querySelector("#presenter-pane") as Element;
 presenterPane.innerHTML = speech;
 
-var sk = new SlideKit(document.querySelector("#slides") as SVGSVGElement);
+const sk = new SlideKit(document.querySelector("#slides") as SVGSVGElement);
 
 {
   const i = parseInt(location.hash.slice(1), 10);

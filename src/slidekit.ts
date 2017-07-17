@@ -33,17 +33,17 @@ export default class SlideKit {
     this.syncWindows = [];
 
     // Workaround for Firefox
-    for (let path of this.svg.querySelectorAll("path")) {
+    for (const path of this.svg.querySelectorAll("path")) {
       if (path.style.strokeMiterlimit && parseFloat(path.style.strokeMiterlimit) > 100) {
         path.style.strokeMiterlimit = "100";
       }
     }
-    for (let tspan of this.svg.querySelectorAll("tspan")) {
+    for (const tspan of this.svg.querySelectorAll("tspan")) {
       if (tspan.textContent === "") {
         (tspan.parentNode as SVGElement).removeChild(tspan);
       }
     }
-    for (let text of this.svg.querySelectorAll("text")) {
+    for (const text of this.svg.querySelectorAll("text")) {
       if (text.textContent === "") {
         (text.parentNode as SVGElement).removeChild(text);
       }
@@ -56,8 +56,8 @@ export default class SlideKit {
       }
     });
 
-    for (let slide of this.svg.querySelectorAll('[id^="slide-"]')) {
-      let slideIndex = slide.id.slice("slide-".length);
+    for (const slide of this.svg.querySelectorAll('[id^="slide-"]')) {
+      const slideIndex = slide.id.slice("slide-".length);
       slide.addEventListener("click", e => {
         if (self.overviewReturnIndex !== null) {
           self.overviewReturnIndex = slideIndex;
@@ -80,7 +80,7 @@ export default class SlideKit {
       this.layer.classList.add("untransformed");
 
       // Workaround for Firefox
-      for (let symbol of this.svg.querySelectorAll("symbol")) {
+      for (const symbol of this.svg.querySelectorAll("symbol")) {
         symbol.classList.add("unstaged");
       }
 
@@ -88,7 +88,7 @@ export default class SlideKit {
       const bb = s.getBoundingClientRect();
 
       // Workaround for Firefox
-      for (let symbol of this.svg.querySelectorAll("symbol")) {
+      for (const symbol of this.svg.querySelectorAll("symbol")) {
         symbol.classList.remove("unstaged");
       }
 
@@ -130,7 +130,7 @@ export default class SlideKit {
       }
     }
 
-    for (let win of this.syncWindows) {
+    for (const win of this.syncWindows) {
       (win as any).sk.gotoSlide(i);
     }
 
@@ -178,7 +178,7 @@ export default class SlideKit {
 
   query(query: string) {
     const qs = query.toLowerCase().split(/\s+/);
-    for (let elem of this.svg.querySelectorAll("text")) {
+    for (const elem of this.svg.querySelectorAll("text")) {
       if (qs.every(q => (elem.textContent as string).toLowerCase().indexOf(q) === -1)) {
         elem.classList.add("not-match");
       }
