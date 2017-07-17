@@ -17,7 +17,6 @@ export default class SlideKit {
   private layer: SVGElement;
   private currentIndex: number | string;
   private overviewReturnIndex: number | string | null;
-  private blur: { value: string, direction: number };
   private syncWindows: Window[];
 
   constructor(private svg: SVGSVGElement) {
@@ -31,7 +30,6 @@ export default class SlideKit {
     (svgTitle.parentNode as SVGElement).removeChild(svgTitle);
     this.currentIndex = 0;
     this.overviewReturnIndex = null;
-    this.blur = { value: '0px', direction: 0 };
     this.syncWindows = [];
 
     // Workaround for Firefox
@@ -171,32 +169,7 @@ export default class SlideKit {
   }
 
   switchBlur() {
-    const self = this;
-    anime.remove(this.blur);
-    if (this.blur.value !== '0px' && this.blur.direction !== -1) {
-      this.blur.direction = -1;
-      anime({
-        targets: this.blur,
-        value: '0px',
-        easing: 'linear',
-        duration: 100,
-        update: function() {
-          self.svg.style.filter = `blur(${self.blur.value})`
-        }
-      });
-    }
-    else {
-      this.blur.direction = +1;
-      anime({
-        targets: this.blur,
-        value: '10px',
-        easing: 'linear',
-        duration: 100,
-        update: function() {
-          self.svg.style.filter = `blur(${self.blur.value})`
-        }
-      });
-    }
+    this.svg.classList.toggle('blurred');
   }
 
   switchPresenterMode() {
