@@ -1,0 +1,30 @@
+{
+  "rules": {
+    "curly": true,
+    "quotemark": [true, "double", "avoid-escape"],
+    "no-invalid-this": true,
+    "no-unused-expression": true,
+    "no-unused-variable": true,
+    "no-use-before-declare": true,
+    "no-var-keyword": true,
+    "prefer-conditional-expression": true,
+    "restrict-plus-operands": true,
+    "strict-type-predicates": true,
+    "triple-equals": true,
+    "use-isnan": true,
+    "deprecation": true,
+    "eofline": true,
+    "indent": [true, "spaces", 2],
+    "linebreak-style": [true, "LF"],
+    "prefer-const": true,
+    "arrow-return-shorthand": true,
+    "class-name": true,
+    "encoding": true,
+    "newline-before-return": true,
+    "object-literal-key-quotes": [true, "consistent-as-needed"],
+    "one-variable-per-declaration": [true, "ignore-for-loop"],
+    "semicolon": [true, "always"],
+    "space-before-function-paren": [true, "never"],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"]
+  }
+}

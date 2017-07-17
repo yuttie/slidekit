@@ -1,17 +1,17 @@
-'use strict';
-import './style.scss';
-import SlideKit from './slidekit';
-const slidesSvg = require('./slides.svg');
-const speech = require('./speech.md');
+"use strict";
+import "./style.scss";
+import SlideKit from "./slidekit";
+const slidesSvg = require("./slides.svg");
+const speech = require("./speech.md");
 
 // Put the slides SVG inline
 const svg = document.createRange().createContextualFragment(slidesSvg).firstChild as SVGSVGElement;
 document.body.appendChild(svg);
 
-const presenterPane = document.querySelector('#presenter-pane') as Element;
+const presenterPane = document.querySelector("#presenter-pane") as Element;
 presenterPane.innerHTML = speech;
 
-var sk = new SlideKit(document.querySelector('#slides') as SVGSVGElement);
+const sk = new SlideKit(document.querySelector("#slides") as SVGSVGElement);
 
 {
   const i = parseInt(location.hash.slice(1), 10);
@@ -27,65 +27,65 @@ var sk = new SlideKit(document.querySelector('#slides') as SVGSVGElement);
   }
 }
 
-const qbox = document.querySelector('#querybox') as HTMLInputElement;
-qbox.addEventListener('keydown', function(e: KeyboardEvent) {
-  if (e.key === 'Escape') {
+const qbox = document.querySelector("#querybox") as HTMLInputElement;
+qbox.addEventListener("keydown", function(e: KeyboardEvent) {
+  if (e.key === "Escape") {
     const qbox = e.target as HTMLInputElement;
-    qbox.value = '';
+    qbox.value = "";
     qbox.blur();
     sk.query(qbox.value);
   }
 });
 
-qbox.addEventListener('input', function(e: Event) {
+qbox.addEventListener("input", function(e: Event) {
   const qbox = e.target as HTMLInputElement;
   sk.query(qbox.value);
 });
 
 // Key bindings
-document.addEventListener('keydown', function(e: KeyboardEvent) {
-  if ((e.target as Element).tagName === 'BODY') {
-    if (e.key === ' ' || e.key === 'ArrowRight' || e.key === 'PageDown') {
+document.addEventListener("keydown", function(e: KeyboardEvent) {
+  if ((e.target as Element).tagName === "BODY") {
+    if (e.key === " " || e.key === "ArrowRight" || e.key === "PageDown") {
       // next
       sk.nextSlide();
       e.preventDefault();
     }
-    else if (e.key === 'Backspace' || e.key === 'ArrowLeft' || e.key === 'PageUp') {
+    else if (e.key === "Backspace" || e.key === "ArrowLeft" || e.key === "PageUp") {
       // previous
       sk.prevSlide();
       e.preventDefault();
     }
-    else if (e.key === 'Escape') {
+    else if (e.key === "Escape") {
       // overview
       sk.switchOverview();
       e.preventDefault();
     }
-    else if (e.key === 'b') {
+    else if (e.key === "b") {
       // blur
       sk.switchBlur();
       e.preventDefault();
     }
-    else if (e.key === 'p') {
+    else if (e.key === "p") {
       // blur
       sk.switchPresenterMode();
       e.preventDefault();
     }
-    else if (e.key === 'c') {
+    else if (e.key === "c") {
       // clone
       const win = window.open(window.location.hash);
       sk.registerSyncWindow(win);
       e.preventDefault();
     }
-    else if (e.key === '/') {
+    else if (e.key === "/") {
       // search
-      const qbox = document.querySelector('#querybox') as HTMLInputElement;
+      const qbox = document.querySelector("#querybox") as HTMLInputElement;
       qbox.focus();
       e.preventDefault();
     }
   }
 });
 
-document.addEventListener('wheel', function(e) {
+document.addEventListener("wheel", function(e) {
   if (e.deltaY > 0) {
       // next
       sk.nextSlide();
