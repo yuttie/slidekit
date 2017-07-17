@@ -1,7 +1,7 @@
 {
   "rules": {
     "curly": true,
-    "quotemark": [true, "double"],
+    "quotemark": [true, "double", "avoid-escape"],
     "no-invalid-this": true,
     "no-unused-expression": true,
     "no-unused-variable": true,
