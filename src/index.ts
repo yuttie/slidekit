@@ -8,6 +8,10 @@ const speech = require("./speech.md");
 const svg = document.createRange().createContextualFragment(slidesSvg).firstChild as SVGSVGElement;
 document.body.appendChild(svg);
 
+const svgTitle = svg.querySelector("svg > title") as SVGTitleElement;
+document.title = svgTitle.textContent as string;
+(svgTitle.parentNode as SVGElement).removeChild(svgTitle);
+
 const presenterPane = document.querySelector("#presenter-pane") as Element;
 presenterPane.innerHTML = speech;
 

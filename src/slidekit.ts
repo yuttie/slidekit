@@ -25,9 +25,6 @@ export default class SlideKit {
     const overview = this.svg.querySelector("#slide-overview") as SVGElement;
     overview.classList.add("hidden");
 
-    const svgTitle = this.svg.querySelector("svg > title") as SVGTitleElement;
-    document.title = svgTitle.textContent as string;
-    (svgTitle.parentNode as SVGElement).removeChild(svgTitle);
     this.currentIndex = 0;
     this.overviewReturnIndex = null;
     this.syncWindows = [];
