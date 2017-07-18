@@ -18,7 +18,7 @@ export default class SlideKit {
   private layer: SVGElement;
   private currentIndex: number | string;
   private overviewReturnIndex: number | string | null;
-  private syncWindows: Window[];
+  private slideChangeCallbacks: ((slideIndex: number | string) => void)[];
 
   constructor(svg: SVGSVGElement) {
     this.svg = svg;
@@ -29,7 +29,7 @@ export default class SlideKit {
 
     this.currentIndex = 0;
     this.overviewReturnIndex = null;
-    this.syncWindows = [];
+    this.slideChangeCallbacks = [];
 
     // Workaround for Firefox
     for (const path of this.svg.querySelectorAll("path")) {
@@ -137,8 +137,8 @@ export default class SlideKit {
       }
     }
 
-    for (const win of this.syncWindows) {
-      (win as any).sk.gotoSlide(i);
+    for (const callback of this.slideChangeCallbacks) {
+      callback(i);
     }
 
     return res;
@@ -187,7 +187,7 @@ export default class SlideKit {
     }
   }
 
-  registerSyncWindow(win: Window) {
-    this.syncWindows.push(win);
+  onSlideChange(callback: (slideIndex: number | string) => void) {
+    this.slideChangeCallbacks.push(callback);
   }
 }

@@ -15,7 +15,14 @@ document.title = svgTitle.textContent as string;
 const presenterPane = document.querySelector("#presenter-pane") as Element;
 presenterPane.innerHTML = speech;
 
+const syncWindows: Window[] = [];
+
 const sk = new SlideKit(document.querySelector("#slides") as SVGSVGElement);
+sk.onSlideChange((slideId: number | string) => {
+  for (const win of syncWindows) {
+    (win as any).sk.gotoSlide(slideId);
+  }
+});
 
 {
   const i = parseInt(location.hash.slice(1), 10);
@@ -78,7 +85,7 @@ document.addEventListener("keydown", function(e: KeyboardEvent) {
       // clone
       const win = window.open(window.location.hash);
       if (win) {
-        sk.registerSyncWindow(win);
+        syncWindows.push(win);
         e.preventDefault();
       }
     }
