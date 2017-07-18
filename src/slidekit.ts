@@ -176,14 +176,6 @@ export default class SlideKit {
     }
   }
 
-  switchBlur() {
-    this.svg.classList.toggle("blurred");
-  }
-
-  switchPresenterMode() {
-    document.body.classList.toggle("presenter-mode");
-  }
-
   query(query: string) {
     const qs = query.toLowerCase().split(/\s+/);
     for (const elem of this.svg.querySelectorAll("text")) {

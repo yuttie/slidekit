@@ -62,12 +62,12 @@ document.addEventListener("keydown", function(e: KeyboardEvent) {
     }
     else if (e.key === "b") {
       // blur
-      sk.switchBlur();
+      svg.classList.toggle("blurred");
       e.preventDefault();
     }
     else if (e.key === "p") {
       // blur
-      sk.switchPresenterMode();
+      document.body.classList.toggle("presenter-mode");
       e.preventDefault();
     }
     else if (e.key === "c") {
