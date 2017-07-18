@@ -14,12 +14,14 @@ function fixSmallNumber(x: number) {
 }
 
 export default class SlideKit {
+  private svg: SVGSVGElement;
   private layer: SVGElement;
   private currentIndex: number | string;
   private overviewReturnIndex: number | string | null;
   private syncWindows: Window[];
 
-  constructor(private svg: SVGSVGElement) {
+  constructor(svg: SVGSVGElement) {
+    this.svg = svg;
     this.layer = this.svg.querySelector("#slides-layer") as SVGElement;
 
     const overview = this.svg.querySelector("#slide-overview") as SVGElement;
