@@ -23,7 +23,7 @@ class Shell {
     this.sk = new SlideKit(document.querySelector("#slides") as SVGSVGElement);
     this.sk.onSlideChange((slideId: number | string) => {
       for (const win of syncWindows) {
-        (win as any).shell.sk.gotoSlide(slideId);
+        (win as any).shell.showSlide(slideId);
       }
     });
 
@@ -47,12 +47,12 @@ class Shell {
       if ((e.target as Element).tagName === "BODY") {
         if (e.key === " " || e.key === "ArrowRight" || e.key === "PageDown") {
           // next
-          this.sk.nextSlide();
+          this.nextSlide();
           e.preventDefault();
         }
         else if (e.key === "Backspace" || e.key === "ArrowLeft" || e.key === "PageUp") {
           // previous
-          this.sk.prevSlide();
+          this.prevSlide();
           e.preventDefault();
         }
         else if (e.key === "Escape") {
@@ -90,42 +90,35 @@ class Shell {
     document.addEventListener("wheel", function(e) {
       if (e.deltaY > 0) {
         // next
-        this.sk.nextSlide();
+        this.nextSlide();
         e.preventDefault();
       }
       else if (e.deltaY < 0) {
         // previous
-        this.sk.prevSlide();
+        this.prevSlide();
         e.preventDefault();
       }
     });
 
     // History management
-    this.sk.onSlideChange((slideId: number | string) => {
-      if (window.history.state === null) {
-        window.history.replaceState(slideId, "", "#" + slideId);
-      }
-      else {
-        window.history.pushState(slideId, "", "#" + slideId);
-      }
-    });
     window.addEventListener("popstate", function(e) {
       if (e.state !== null) {
         this.sk.showSlide(e.state);
       }
     });
 
+    // Parse the hash
     {
       const i = parseInt(location.hash.slice(1), 10);
       if (!Number.isNaN(i)) {
-        const res = this.sk.gotoSlide(i);
+        const res = this.showSlide(i);
         if (res === false) {
-          this.sk.gotoSlide(0);
+          this.showSlide(0);
         }
       }
       else {
         // Move to the first slide
-        this.sk.gotoSlide(0);
+        this.showSlide(0);
       }
     }
   }
