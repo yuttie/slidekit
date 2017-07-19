@@ -179,5 +179,5 @@ class Shell {
   }
 }
 
-// Make `sk` global
+// Make `shell` global
 (window as any).shell = new Shell(slidesSvg, speech);
