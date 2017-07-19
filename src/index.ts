@@ -6,6 +6,8 @@ const speech = require("./speech.md");
 
 class Shell {
   private sk: SlideKit;
+  private syncWindows: Window[];
+
   constructor(slidesSvg: string, speech: string) {
     // Put the slides SVG inline
     const svg = document.createRange().createContextualFragment(slidesSvg).firstChild as SVGSVGElement;
@@ -18,11 +20,11 @@ class Shell {
     const presenterPane = document.querySelector("#presenter-pane") as Element;
     presenterPane.innerHTML = speech;
 
-    const syncWindows: Window[] = [];
+    this.syncWindows = [];
 
     this.sk = new SlideKit(document.querySelector("#slides") as SVGSVGElement);
     this.sk.onSlideChange((slideId: number | string) => {
-      for (const win of syncWindows) {
+      for (const win of this.syncWindows) {
         (win as any).shell.showSlide(slideId);
       }
     });
@@ -74,7 +76,7 @@ class Shell {
           // clone
           const win = window.open(window.location.hash);
           if (win) {
-            syncWindows.push(win);
+            this.syncWindows.push(win);
             e.preventDefault();
           }
         }
