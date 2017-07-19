@@ -30,7 +30,7 @@ class Shell {
     });
 
     const qbox = document.querySelector("#querybox") as HTMLInputElement;
-    qbox.addEventListener("keydown", function(e: KeyboardEvent) {
+    qbox.addEventListener("keydown", (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         const qbox = e.target as HTMLInputElement;
         qbox.value = "";
@@ -39,13 +39,13 @@ class Shell {
       }
     });
 
-    qbox.addEventListener("input", function(e: Event) {
+    qbox.addEventListener("input", (e: Event) => {
       const qbox = e.target as HTMLInputElement;
       this.sk.query(qbox.value);
     });
 
     // Key bindings
-    document.addEventListener("keydown", function(e: KeyboardEvent) {
+    document.addEventListener("keydown", (e: KeyboardEvent) => {
       if ((e.target as Element).tagName === "BODY") {
         if (e.key === " " || e.key === "ArrowRight" || e.key === "PageDown") {
           // next
@@ -89,7 +89,7 @@ class Shell {
       }
     });
 
-    document.addEventListener("wheel", function(e) {
+    document.addEventListener("wheel", (e) => {
       if (e.deltaY > 0) {
         // next
         this.nextSlide();
@@ -103,7 +103,7 @@ class Shell {
     });
 
     // History management
-    window.addEventListener("popstate", function(e) {
+    window.addEventListener("popstate", (e) => {
       if (e.state !== null) {
         this.sk.showSlide(e.state);
       }
