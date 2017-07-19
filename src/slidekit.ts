@@ -135,10 +135,10 @@ export default class SlideKit {
       else {
         window.history.pushState(i, "", "#" + i);
       }
-    }
 
-    for (const callback of this.slideChangeCallbacks) {
-      callback(i);
+      for (const callback of this.slideChangeCallbacks) {
+        callback(i);
+      }
     }
 
     return res;
