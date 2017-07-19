@@ -24,20 +24,6 @@ sk.onSlideChange((slideId: number | string) => {
   }
 });
 
-{
-  const i = parseInt(location.hash.slice(1), 10);
-  if (!Number.isNaN(i)) {
-    const res = sk.gotoSlide(i);
-    if (res === false) {
-      sk.gotoSlide(0);
-    }
-  }
-  else {
-    // Move to the first slide
-    sk.gotoSlide(0);
-  }
-}
-
 const qbox = document.querySelector("#querybox") as HTMLInputElement;
 qbox.addEventListener("keydown", function(e: KeyboardEvent) {
   if (e.key === "Escape") {
@@ -125,6 +111,20 @@ window.addEventListener("popstate", function(e) {
     sk.showSlide(e.state);
   }
 });
+
+{
+  const i = parseInt(location.hash.slice(1), 10);
+  if (!Number.isNaN(i)) {
+    const res = sk.gotoSlide(i);
+    if (res === false) {
+      sk.gotoSlide(0);
+    }
+  }
+  else {
+    // Move to the first slide
+    sk.gotoSlide(0);
+  }
+}
 
 // Make `sk` global
 (window as any).sk = sk;
