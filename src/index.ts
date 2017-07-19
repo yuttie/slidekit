@@ -111,5 +111,20 @@ document.addEventListener("wheel", function(e) {
   }
 });
 
+// History management
+sk.onSlideChange((slideId: number | string) => {
+  if (window.history.state === null) {
+    window.history.replaceState(slideId, "", "#" + slideId);
+  }
+  else {
+    window.history.pushState(slideId, "", "#" + slideId);
+  }
+});
+window.addEventListener("popstate", function(e) {
+  if (e.state !== null) {
+    sk.showSlide(e.state);
+  }
+});
+
 // Make `sk` global
 (window as any).sk = sk;

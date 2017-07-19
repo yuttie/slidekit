@@ -49,12 +49,6 @@ export default class SlideKit {
     }
 
     const self = this;
-    window.addEventListener("popstate", function(e) {
-      if (e.state !== null) {
-        self.showSlide(e.state);
-      }
-    });
-
     for (const slide of this.svg.querySelectorAll('[id^="slide-"]')) {
       const slideIndex: number | string = (() => {
         const slideIndexStr = slide.id.slice("slide-".length);
@@ -129,12 +123,6 @@ export default class SlideKit {
     const res = this.showSlide(i);
     if (res !== false) {
       const i = res;
-      if (history.state === null) {
-        window.history.replaceState(i, "", "#" + i);
-      }
-      else {
-        window.history.pushState(i, "", "#" + i);
-      }
 
       for (const callback of this.slideChangeCallbacks) {
         callback(i);
