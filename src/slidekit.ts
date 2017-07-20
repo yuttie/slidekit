@@ -112,6 +112,10 @@ export default class SlideKit {
         duration: 500
       });
 
+      for (const callback of this.slideChangeCallbacks) {
+        callback(i);
+      }
+
       return i;
     }
     else {
@@ -119,22 +123,9 @@ export default class SlideKit {
     }
   }
 
-  gotoSlide(i: number | string) {
-    const res = this.showSlide(i);
-    if (res !== false) {
-      const i = res;
-
-      for (const callback of this.slideChangeCallbacks) {
-        callback(i);
-      }
-    }
-
-    return res;
-  }
-
   nextSlide() {
     if (typeof this.currentIndex === "number") {
-      return this.gotoSlide(this.currentIndex + 1);
+      return this.showSlide(this.currentIndex + 1);
     }
     else {
       return false;
@@ -143,7 +134,7 @@ export default class SlideKit {
 
   prevSlide() {
     if (typeof this.currentIndex === "number") {
-      return this.gotoSlide(this.currentIndex - 1);
+      return this.showSlide(this.currentIndex - 1);
     }
     else {
       return false;
@@ -154,12 +145,12 @@ export default class SlideKit {
     if (this.overviewReturnIndex === null) {
       this.overviewReturnIndex = this.currentIndex;
       this.currentIndex = "overview";
-      this.gotoSlide(this.currentIndex);
+      this.showSlide(this.currentIndex);
     }
     else {
       this.currentIndex = this.overviewReturnIndex;
       this.overviewReturnIndex = null;
-      this.gotoSlide(this.currentIndex);
+      this.showSlide(this.currentIndex);
     }
   }
 
