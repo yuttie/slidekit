@@ -16,7 +16,7 @@ function fixSmallNumber(x: number) {
 export default class SlideKit {
   private svg: SVGSVGElement;
   private layer: SVGElement;
-  private currentIndex: number | string;
+  private stack: (number | string)[];
   private overviewReturnIndex: number | string | null;
   private slideChangeCallbacks: ((slideIndex: number | string) => void)[];
 
@@ -27,7 +27,7 @@ export default class SlideKit {
     const overview = this.svg.querySelector("#slide-overview") as SVGElement;
     overview.classList.add("hidden");
 
-    this.currentIndex = 0;
+    this.stack = [0];
     this.overviewReturnIndex = null;
     this.slideChangeCallbacks = [];
 
@@ -71,7 +71,7 @@ export default class SlideKit {
   showSlide(i: number | string) {
     const s = this.svg.querySelector("#slide-" + i);
     if (s) {
-      this.currentIndex = i;
+      this.stack[this.stack.length - 1] = i;
 
       // Save the current viewBox
       const viewBox = this.svg.getAttribute("viewBox");
@@ -124,8 +124,9 @@ export default class SlideKit {
   }
 
   nextSlide() {
-    if (typeof this.currentIndex === "number") {
-      return this.showSlide(this.currentIndex + 1);
+    const current = this.stack[this.stack.length - 1];
+    if (typeof current === "number") {
+      return this.showSlide(current + 1);
     }
     else {
       return false;
@@ -133,8 +134,9 @@ export default class SlideKit {
   }
 
   prevSlide() {
-    if (typeof this.currentIndex === "number") {
-      return this.showSlide(this.currentIndex - 1);
+    const current = this.stack[this.stack.length - 1];
+    if (typeof current === "number") {
+      return this.showSlide(current - 1);
     }
     else {
       return false;
@@ -143,14 +145,14 @@ export default class SlideKit {
 
   switchOverview() {
     if (this.overviewReturnIndex === null) {
-      this.overviewReturnIndex = this.currentIndex;
-      this.currentIndex = "overview";
-      this.showSlide(this.currentIndex);
+      this.overviewReturnIndex = this.stack[this.stack.length - 1];
+      this.stack[this.stack.length - 1] = "overview";
+      this.showSlide(this.stack[this.stack.length - 1]);
     }
     else {
-      this.currentIndex = this.overviewReturnIndex;
+      this.stack[this.stack.length - 1] = this.overviewReturnIndex;
       this.overviewReturnIndex = null;
-      this.showSlide(this.currentIndex);
+      this.showSlide(this.stack[this.stack.length - 1]);
     }
   }
 
