@@ -143,6 +143,36 @@ export default class SlideKit {
     }
   }
 
+  currentSlide(): number | string {
+    return this.stack[this.stack.length - 1];
+  }
+
+  pushSlide(i: number | string): void {
+    this.stack.push(i);
+    this.showSlide(this.currentSlide());
+  }
+
+  popSlide(): number | string | null {
+    if (this.stack.length > 1) {
+      const popped = this.stack.pop() as number | string;
+      this.showSlide(this.currentSlide());
+
+      return popped;
+    }
+    else {
+      // Cannot pop the last element
+      return null;
+    }
+  }
+
+  replaceSlide(i: number | string): number | string | null {
+    const old = this.currentSlide();
+    this.stack[this.stack.length - 1] = i;
+    this.showSlide(this.currentSlide());
+
+    return old;
+  }
+
   switchOverview() {
     if (this.overviewReturnIndex === null) {
       this.overviewReturnIndex = this.stack[this.stack.length - 1];
