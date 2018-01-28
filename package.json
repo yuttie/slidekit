@@ -16,23 +16,23 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@types/node": "^8.0.13",
-    "css-loader": "^0.28.4",
+    "@types/node": "^8.5.9",
+    "css-loader": "^0.28.9",
     "extract-text-webpack-plugin": "^2.1.2",
     "html-loader": "^0.4.5",
-    "markdown-loader": "^2.0.1",
-    "node-sass": "^4.5.3",
+    "markdown-loader": "^2.0.2",
+    "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "svg-inline-loader": "^0.7.1",
-    "ts-loader": "^2.2.2",
-    "tslint": "^5.5.0",
+    "ts-loader": "^2.3.7",
+    "tslint": "^5.9.1",
     "tslint-loader": "^3.5.3",
-    "typescript": "^2.4.1",
-    "webpack": "^3.2.0",
-    "webpack-dev-server": "^2.5.0"
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
-    "animejs": "^2.0.2"
+    "animejs": "^2.2.0"
   }
 }
