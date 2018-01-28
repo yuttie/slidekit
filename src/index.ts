@@ -126,7 +126,7 @@ class Shell {
     }
   }
 
-  showSlide(i: number | string) {
+  showSlide(i: number | string): number | string | false {
     const result = this.sk.replaceSlide(i);
 
     if (result !== false) {
@@ -143,7 +143,7 @@ class Shell {
     return result;
   }
 
-  prevSlide() {
+  prevSlide(): number | string | false {
     const res = this.sk.prevSlide();
 
     if (res !== false) {
@@ -159,7 +159,7 @@ class Shell {
     return res;
   }
 
-  nextSlide() {
+  nextSlide(): number | string | false {
     const res = this.sk.nextSlide();
 
     if (res !== false) {

@@ -4,7 +4,7 @@ import * as anime from "animejs";
 // Workaround for Chrome
 // With Chrome browser, Anime.js doesn't seem to begin animation correctly if
 // an initial value of translate{X,Y} is less than 1e-4.
-function fixSmallNumber(x: number) {
+function fixSmallNumber(x: number): number {
   if (Math.abs(x) < 1e-4) {
     return 0;
   }
@@ -126,7 +126,7 @@ export default class SlideKit {
     }
   }
 
-  nextSlide() {
+  nextSlide(): number | string | false {
     const current = this.currentSlide();
     if (typeof current === "number") {
       const ret = this.replaceSlide(current + 1);
@@ -141,7 +141,7 @@ export default class SlideKit {
     }
   }
 
-  prevSlide() {
+  prevSlide(): number | string | false {
     const current = this.currentSlide();
     if (typeof current === "number") {
       const ret = this.replaceSlide(current - 1);
@@ -195,7 +195,7 @@ export default class SlideKit {
     }
   }
 
-  switchOverview() {
+  switchOverview(): void {
     if (this.overviewReturnIndex === null) {
       const ret = this.replaceSlide("overview");
       if (ret !== false) {
@@ -210,7 +210,7 @@ export default class SlideKit {
     }
   }
 
-  query(query: string) {
+  query(query: string): void {
     const qs = query.toLowerCase().split(/\s+/);
     for (const elem of this.svg.querySelectorAll("text")) {
       if (qs.every(q => (elem.textContent as string).toLowerCase().indexOf(q) === -1)) {
@@ -222,7 +222,7 @@ export default class SlideKit {
     }
   }
 
-  onSlideChange(callback: (slideIndex: number | string) => void) {
+  onSlideChange(callback: (slideIndex: number | string) => void): void {
     this.slideChangeCallbacks.push(callback);
   }
 }
