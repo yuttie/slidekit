@@ -44,6 +44,12 @@ class Shell {
       this.sk.query(qbox.value);
     });
 
+    qbox.addEventListener("blur", (e: Event) => {
+      const qbox = e.target as HTMLInputElement;
+      qbox.value = "";
+      this.sk.query("");
+    });
+
     // Key bindings
     document.addEventListener("keydown", (e: KeyboardEvent) => {
       if ((e.target as Element).tagName === "BODY") {
