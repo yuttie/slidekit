@@ -73,8 +73,10 @@ document.addEventListener("keydown", function(e: KeyboardEvent) {
     else if (e.key === "c") {
       // clone
       const win = window.open(window.location.hash);
-      sk.registerSyncWindow(win);
-      e.preventDefault();
+      if (win) {
+        sk.registerSyncWindow(win);
+        e.preventDefault();
+      }
     }
     else if (e.key === "/") {
       // search
