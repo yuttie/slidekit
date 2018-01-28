@@ -57,7 +57,15 @@ export default class SlideKit {
     });
 
     for (const slide of this.svg.querySelectorAll('[id^="slide-"]')) {
-      const slideIndex = slide.id.slice("slide-".length);
+      const slideIndex: number | string = (() => {
+        const slideIndexStr = slide.id.slice("slide-".length);
+        if (/^\d+$/.test(slideIndexStr)) {
+          return parseInt(slideIndexStr);
+        }
+        else {
+          return slideIndexStr;
+        }
+      })();
       slide.addEventListener("click", e => {
         if (self.overviewReturnIndex !== null) {
           self.overviewReturnIndex = slideIndex;
