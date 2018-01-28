@@ -105,7 +105,8 @@ class Shell {
     // History management
     window.addEventListener("popstate", (e) => {
       if (e.state !== null) {
-        this.sk.showSlide(e.state);
+        this.sk.replaceSlide(e.state);
+        this.sk.showCurrentSlide();
       }
     });
 
@@ -126,10 +127,11 @@ class Shell {
   }
 
   showSlide(i: number | string) {
-    const res = this.sk.showSlide(i);
+    const result = this.sk.replaceSlide(i);
 
-    if (res !== false) {
-      const i = res;
+    if (result !== false) {
+      this.sk.showCurrentSlide();
+      const i = result;
       if (window.history.state === null) {
         window.history.replaceState(i, "", "#" + i);
       }
@@ -138,7 +140,7 @@ class Shell {
       }
     }
 
-    return res;
+    return result;
   }
 
   prevSlide() {

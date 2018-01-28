@@ -68,65 +68,73 @@ export default class SlideKit {
     }
   }
 
-  showSlide(i: number | string) {
+  doesSlideExist(i: number | string): boolean {
     const s = this.svg.querySelector("#slide-" + i);
     if (s) {
-      this.stack[this.stack.length - 1] = i;
-
-      // Save the current viewBox
-      const viewBox = this.svg.getAttribute("viewBox");
-
-      // Reset the user coordinate system
-      this.svg.removeAttribute("viewBox");
-      this.layer.classList.add("untransformed");
-
-      // Workaround for Firefox
-      for (const symbol of this.svg.querySelectorAll("symbol")) {
-        symbol.classList.add("unstaged");
-      }
-
-      // Get the bounding box of the slide
-      const bb = s.getBoundingClientRect();
-
-      // Workaround for Firefox
-      for (const symbol of this.svg.querySelectorAll("symbol")) {
-        symbol.classList.remove("unstaged");
-      }
-
-      // Restore the viewBox
-      this.svg.setAttribute("viewBox", viewBox as string);
-      this.layer.classList.remove("untransformed");
-
-      // Move the entire layer
-      anime({
-        targets: this.svg,
-        viewBox: `0 0 ${bb.width} ${bb.height}`,
-        easing: "easeOutSine",
-        duration: 500
-      });
-      anime({
-        targets: this.layer,
-        translateX: -fixSmallNumber(bb.left),
-        translateY: -fixSmallNumber(bb.top),
-        easing: "easeOutSine",
-        duration: 500
-      });
-
-      for (const callback of this.slideChangeCallbacks) {
-        callback(i);
-      }
-
-      return i;
+      return true;
     }
     else {
       return false;
     }
   }
 
+  showCurrentSlide(): void {
+    const i = this.currentSlide();
+    const s = this.svg.querySelector("#slide-" + i) as SVGElement;
+
+    // Save the current viewBox
+    const viewBox = this.svg.getAttribute("viewBox");
+
+    // Reset the user coordinate system
+    this.svg.removeAttribute("viewBox");
+    this.layer.classList.add("untransformed");
+
+    // Workaround for Firefox
+    for (const symbol of this.svg.querySelectorAll("symbol")) {
+      symbol.classList.add("unstaged");
+    }
+
+    // Get the bounding box of the slide
+    const bb = s.getBoundingClientRect();
+
+    // Workaround for Firefox
+    for (const symbol of this.svg.querySelectorAll("symbol")) {
+      symbol.classList.remove("unstaged");
+    }
+
+    // Restore the viewBox
+    this.svg.setAttribute("viewBox", viewBox as string);
+    this.layer.classList.remove("untransformed");
+
+    // Move the entire layer
+    anime({
+      targets: this.svg,
+      viewBox: `0 0 ${bb.width} ${bb.height}`,
+      easing: "easeOutSine",
+      duration: 500
+    });
+    anime({
+      targets: this.layer,
+      translateX: -fixSmallNumber(bb.left),
+      translateY: -fixSmallNumber(bb.top),
+      easing: "easeOutSine",
+      duration: 500
+    });
+
+    for (const callback of this.slideChangeCallbacks) {
+      callback(i);
+    }
+  }
+
   nextSlide() {
-    const current = this.stack[this.stack.length - 1];
+    const current = this.currentSlide();
     if (typeof current === "number") {
-      return this.showSlide(current + 1);
+      const ret = this.replaceSlide(current + 1);
+      if (ret !== false) {
+        this.showCurrentSlide();
+      }
+
+      return ret;
     }
     else {
       return false;
@@ -134,9 +142,14 @@ export default class SlideKit {
   }
 
   prevSlide() {
-    const current = this.stack[this.stack.length - 1];
+    const current = this.currentSlide();
     if (typeof current === "number") {
-      return this.showSlide(current - 1);
+      const ret = this.replaceSlide(current - 1);
+      if (ret !== false) {
+        this.showCurrentSlide();
+      }
+
+      return ret;
     }
     else {
       return false;
@@ -147,15 +160,20 @@ export default class SlideKit {
     return this.stack[this.stack.length - 1];
   }
 
-  pushSlide(i: number | string): void {
-    this.stack.push(i);
-    this.showSlide(this.currentSlide());
+  pushSlide(i: number | string): boolean {
+    if (this.doesSlideExist(i)) {
+      this.stack.push(i);
+
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
   popSlide(): number | string | null {
     if (this.stack.length > 1) {
       const popped = this.stack.pop() as number | string;
-      this.showSlide(this.currentSlide());
 
       return popped;
     }
@@ -165,24 +183,30 @@ export default class SlideKit {
     }
   }
 
-  replaceSlide(i: number | string): number | string | null {
-    const old = this.currentSlide();
-    this.stack[this.stack.length - 1] = i;
-    this.showSlide(this.currentSlide());
+  replaceSlide(i: number | string): number | string | false {
+    if (this.doesSlideExist(i)) {
+      const old = this.currentSlide();
+      this.stack[this.stack.length - 1] = i;
 
-    return old;
+      return old;
+    }
+    else {
+      return false;
+    }
   }
 
   switchOverview() {
     if (this.overviewReturnIndex === null) {
-      this.overviewReturnIndex = this.stack[this.stack.length - 1];
-      this.stack[this.stack.length - 1] = "overview";
-      this.showSlide(this.stack[this.stack.length - 1]);
+      const ret = this.replaceSlide("overview");
+      if (ret !== false) {
+        this.overviewReturnIndex = ret;
+        this.showCurrentSlide();
+      }
     }
     else {
-      this.stack[this.stack.length - 1] = this.overviewReturnIndex;
+      this.replaceSlide(this.overviewReturnIndex);
       this.overviewReturnIndex = null;
-      this.showSlide(this.stack[this.stack.length - 1]);
+      this.showCurrentSlide();
     }
   }
 
