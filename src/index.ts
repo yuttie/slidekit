@@ -63,7 +63,7 @@ class Shell {
           this.prevSlide();
           e.preventDefault();
         }
-        else if (e.key === "Escape") {
+        else if (e.key === "Escape" || e.key === "o") {
           // overview
           this.sk.switchOverview();
           e.preventDefault();
