@@ -7,6 +7,7 @@ const speech = require("./speech.md");
 class Shell {
   private sk: SlideKit;
   private syncWindows: Window[];
+  private isPoppingState: boolean = false;
 
   constructor(slidesSvg: string, speech: string) {
     // Put the slides SVG inline
@@ -24,6 +25,18 @@ class Shell {
 
     this.sk = new SlideKit(document.querySelector("#slides") as SVGSVGElement);
     this.sk.onSlideChange((slideId: number | string) => {
+      if (this.isPoppingState) {
+        // Don't need to change the history state because the slide was switched by history manipulation
+        this.isPoppingState = false;
+      }
+      else {
+        if (window.history.state === null) {
+          window.history.replaceState(slideId, "", "#" + slideId);
+        }
+        else {
+          window.history.pushState(slideId, "", "#" + slideId);
+        }
+      }
       for (const win of this.syncWindows) {
         (win as any).shell.showSlide(slideId);
       }
@@ -113,6 +126,7 @@ class Shell {
       if (e.state !== null) {
         this.sk.replaceSlide(e.state);
         this.sk.showCurrentSlide();
+        this.isPoppingState = true;
       }
     });
 
@@ -137,13 +151,6 @@ class Shell {
 
     if (result !== false) {
       this.sk.showCurrentSlide();
-      const i = result;
-      if (window.history.state === null) {
-        window.history.replaceState(i, "", "#" + i);
-      }
-      else {
-        window.history.pushState(i, "", "#" + i);
-      }
     }
 
     return result;
@@ -152,31 +159,11 @@ class Shell {
   prevSlide(): number | string | false {
     const res = this.sk.prevSlide();
 
-    if (res !== false) {
-      const i = res;
-      if (window.history.state === null) {
-        window.history.replaceState(i, "", "#" + i);
-      }
-      else {
-        window.history.pushState(i, "", "#" + i);
-      }
-    }
-
     return res;
   }
 
   nextSlide(): number | string | false {
     const res = this.sk.nextSlide();
-
-    if (res !== false) {
-      const i = res;
-      if (window.history.state === null) {
-        window.history.replaceState(i, "", "#" + i);
-      }
-      else {
-        window.history.pushState(i, "", "#" + i);
-      }
-    }
 
     return res;
   }
