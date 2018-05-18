@@ -25,7 +25,7 @@ export default class SlideKit {
     this.svg = svg;
     this.layer = this.svg.querySelector("#slides-layer") as SVGElement;
 
-    const overview = this.svg.querySelector("#slide-overview") as SVGElement;
+    const overview = this.svg.querySelector("#frame-overview") as SVGElement;
     overview.classList.add("hidden");
 
     this.stack = [0];
@@ -86,7 +86,7 @@ export default class SlideKit {
       return i >= 0 && i < this.slides.length;
     }
     else {
-      const s = this.svg.querySelector("#slide-" + i);
+      const s = this.svg.querySelector("#frame-" + i);
       if (s) {
         return true;
       }
@@ -103,7 +103,7 @@ export default class SlideKit {
         return this.slides[i];
       }
       else {
-        return this.svg.querySelector("#slide-" + i) as SVGElement;
+        return this.svg.querySelector("#frame-" + i) as SVGElement;
       }
     })();
 
