@@ -17,6 +17,7 @@ export default class SlideKit {
   private svg: SVGSVGElement;
   private layer: SVGElement;
   private stack: (number | string)[];
+  private slides: SVGElement[];
   private overviewReturnIndex: number | string | null;
   private slideChangeCallbacks: ((slideIndex: number | string) => void)[];
 
@@ -48,6 +49,27 @@ export default class SlideKit {
       }
     }
 
+    // Collect slides
+    this.slides = [];
+    for (const slide of this.svg.querySelectorAll('[id^="slide-"]')) {
+      this.slides.push(slide as SVGElement);
+    }
+    this.slides.sort((a, b) => {
+      if (a.id < b.id) {
+        return -1;
+      }
+      else if (a.id > b.id) {
+        return 1;
+      }
+      else {
+        return 0;
+      }
+    });
+    for (const s of this.slides) {
+      console.log(s.id);
+    }
+
+    // Add handlers to the click event of slides
     const self = this;
     for (const slide of this.svg.querySelectorAll('[id^="slide-"]')) {
       const slideIndex: number | string = (() => {
