@@ -71,19 +71,10 @@ export default class SlideKit {
 
     // Add handlers to the click event of slides
     const self = this;
-    for (const slide of this.svg.querySelectorAll('[id^="slide-"]')) {
-      const slideIndex: number | string = (() => {
-        const slideIndexStr = slide.id.slice("slide-".length);
-        if (/^\d+$/.test(slideIndexStr)) {
-          return parseInt(slideIndexStr);
-        }
-        else {
-          return slideIndexStr;
-        }
-      })();
+    for (const [index, slide] of this.slides.entries()) {
       slide.addEventListener("click", e => {
         if (self.overviewReturnIndex !== null) {
-          self.overviewReturnIndex = slideIndex;
+          self.overviewReturnIndex = index;
           self.switchOverview();
         }
       });
@@ -91,18 +82,30 @@ export default class SlideKit {
   }
 
   doesSlideExist(i: number | string): boolean {
-    const s = this.svg.querySelector("#slide-" + i);
-    if (s) {
-      return true;
+    if (typeof i === "number") {
+      return i >= 0 && i < this.slides.length;
     }
     else {
-      return false;
+      const s = this.svg.querySelector("#slide-" + i);
+      if (s) {
+        return true;
+      }
+      else {
+        return false;
+      }
     }
   }
 
   showCurrentSlide(): void {
     const i = this.currentSlide();
-    const s = this.svg.querySelector("#slide-" + i) as SVGElement;
+    const s = (() => {
+      if (typeof i === "number") {
+        return this.slides[i];
+      }
+      else {
+        return this.svg.querySelector("#slide-" + i) as SVGElement;
+      }
+    })();
 
     // Save the current viewBox
     const viewBox = this.svg.getAttribute("viewBox");
