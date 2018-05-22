@@ -13,8 +13,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist'
+  serve: {
+    open: true,
+    content: './dist'
   },
   resolve: {
     extensions: [".ts", ".js", ".json"]
