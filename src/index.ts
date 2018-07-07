@@ -14,6 +14,17 @@ class Shell {
     const svg = document.createRange().createContextualFragment(slidesSvg).firstChild as SVGSVGElement;
     document.body.appendChild(svg);
 
+    // Remove Inkscape's sodipodi:namedview node
+    const sodipodiNode = svg.querySelector("sodipodi\\:namedview");
+    if (sodipodiNode) {
+      const parentNode = sodipodiNode.parentNode as Node;
+      while (sodipodiNode.firstChild) {
+        const child = sodipodiNode.firstChild;
+        parentNode.insertBefore(child, sodipodiNode);
+      }
+      sodipodiNode.remove();
+    }
+
     const svgTitle = svg.querySelector("svg > title") as SVGTitleElement;
     document.title = svgTitle.textContent as string;
     (svgTitle.parentNode as SVGElement).removeChild(svgTitle);
