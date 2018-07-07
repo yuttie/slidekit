@@ -123,6 +123,11 @@ export default class SlideKit {
       }
     })();
 
+    for (const s of this.slides) {
+      s.classList.remove("current");
+    }
+    s.classList.add("current");
+
     // Save the current viewBox
     const viewBox = this.svg.getAttribute("viewBox");
 
