@@ -45,6 +45,10 @@ body {
     .sk-page-number {
       font-size: 2em;
     }
+
+    .no-page-number .sk-page-number {
+      display: none;
+    }
   }
 
   #slides.blurred {
