@@ -1,5 +1,11 @@
 $presenter-pane-width: 50%;
 
+* {
+  transition-property: filter;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+}
+
 html, body {
   margin:  0;
   padding: 0;
@@ -21,7 +27,7 @@ body {
     transition-timing-function: ease;
 
     .not-match {
-      opacity: 0.1 !important;
+      filter: blur(10px);
     }
 
     .hidden {
