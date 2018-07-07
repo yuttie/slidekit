@@ -41,6 +41,10 @@ body {
     .untransformed {
       transform: initial !important;
     }
+
+    .sk-page-number {
+      font-size: 2em;
+    }
   }
 
   #slides.blurred {

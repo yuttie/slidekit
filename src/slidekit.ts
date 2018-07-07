@@ -65,8 +65,24 @@ export default class SlideKit {
         return 0;
       }
     });
-    for (const s of this.slides) {
+    for (const [i, s] of this.slides.entries()) {
       console.log(s.id);
+
+      // Create an element for a page number
+      const xmlns = "http://www.w3.org/2000/svg";
+      const pageNumber = document.createElementNS(xmlns, "text");
+      pageNumber.textContent = (i + 1).toString();
+      pageNumber.setAttribute("class", "sk-page-number");
+      pageNumber.setAttribute("text-anchor", "end");
+
+      // Position the page number
+      const bb = (s as any).getBBox();
+      const x = bb.x + bb.width - 10;
+      const y = bb.y + bb.height - 10;
+      pageNumber.setAttribute("x", x.toString());
+      pageNumber.setAttribute("y", y.toString());
+
+      s.appendChild(pageNumber);
     }
 
     // Add handlers to the click event of slides
