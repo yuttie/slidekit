@@ -243,6 +243,7 @@ export default class SlideKit {
 
   switchOverview(): void {
     if (this.overviewReturnIndex === null) {
+      this.svg.classList.add("overview");
       const ret = this.replaceSlide("overview");
       if (ret !== false) {
         this.overviewReturnIndex = ret;
@@ -250,6 +251,7 @@ export default class SlideKit {
       }
     }
     else {
+      this.svg.classList.remove("overview");
       this.replaceSlide(this.overviewReturnIndex);
       this.overviewReturnIndex = null;
       this.showCurrentSlide();
