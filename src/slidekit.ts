@@ -76,7 +76,7 @@ export default class SlideKit {
       pageNumber.setAttribute("text-anchor", "end");
 
       // Position the page number
-      const bb = (s as any).getBBox();
+      const bb = (s as SVGGraphicsElement).getBBox();
       const x = bb.x + bb.width - 10;
       const y = bb.y + bb.height - 10;
       pageNumber.setAttribute("x", x.toString());
