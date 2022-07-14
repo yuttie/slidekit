@@ -1,67 +1,62 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const extractSass = new ExtractTextPlugin({
-  filename: 'style.css',
-  disable: process.env.NODE_ENV === 'development'
-});
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: './src/index.ts',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  },
   devtool: 'inline-source-map',
-  serve: {
-    open: true,
-    content: './dist'
-  },
-  resolve: {
-    extensions: [".ts", ".js", ".json"]
-  },
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        enforce: 'pre',
-        loader: 'tslint-loader'
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
-        test: /\.ts$/,
-        use: "ts-loader",
-        exclude: /node_modules/
-      },
-      {
-        test: /\.scss$/,
-        use: extractSass.extract({
-          use: ['css-loader', 'sass-loader'],
-          fallback: 'style-loader'
-        })
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.svg$/,
         use: {
           loader: 'svg-inline-loader',
-          options: {}
-        }
+          options: {},
+        },
       },
       {
         test: /\.md$/,
         use: [
           {
-            loader: 'html-loader'
+            loader: 'html-loader',
           },
           {
             loader: 'markdown-loader',
             options: {
-            }
-          }
-        ]
-      }
-    ]
+            },
+          },
+        ],
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
   plugins: [
-    extractSass
-  ]
+    new ESLintPlugin({}),
+  ].concat(devMode ? [] : [new MiniCssExtractPlugin()]),
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+  },
 };
