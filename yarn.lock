@@ -89,6 +89,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@types/animejs@^3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@types/animejs/-/animejs-3.1.5.tgz#3cb6c7b90069c6e2969a392eb65ec6311e92c1ab"
+  integrity sha512-4i3i1YuNaNEPoHBJY78uzYu8qKIwyx96G04tnVtNhRMQC9I1Xhg6fY9GeWmZAzudaesKKrPkQgTCthT1zSGYyg==
+
 "@types/eslint-scope@^3.7.3":
   version "3.7.4"
   resolved "https://registry.yarnpkg.com/@types/eslint-scope/-/eslint-scope-3.7.4.tgz#37fc1223f0786c39627068a12e94d6e6fc61de16"

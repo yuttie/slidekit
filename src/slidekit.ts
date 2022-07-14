@@ -1,5 +1,5 @@
 "use strict";
-import * as anime from "animejs";
+import anime from 'animejs/lib/anime.es.js';
 
 // Workaround for Chrome
 // With Chrome browser, Anime.js doesn't seem to begin animation correctly if
