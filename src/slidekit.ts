@@ -68,12 +68,14 @@ export default class SlideKit {
     for (const [i, s] of this.slides.entries()) {
       console.log(s.id);
 
-      // Create an element for a page number
       const xmlns = "http://www.w3.org/2000/svg";
+
+      // Create a text element for a page number
       const pageNumber = document.createElementNS(xmlns, "text");
       pageNumber.textContent = (i + 1).toString();
       pageNumber.setAttribute("class", "sk-page-number");
       pageNumber.setAttribute("text-anchor", "end");
+      pageNumber.setAttribute('transform', s.getAttribute('transform'));
 
       // Position the page number
       const bb = (s as SVGGraphicsElement).getBBox();
@@ -82,7 +84,14 @@ export default class SlideKit {
       pageNumber.setAttribute("x", x.toString());
       pageNumber.setAttribute("y", y.toString());
 
-      s.appendChild(pageNumber);
+      // Create a group containing the slide and the page number
+      // Needed to compute the bounding box of the slide without the page number element
+      const g = document.createElementNS(xmlns, 'g');
+      g.setAttribute('class', 'slide-wrapper');
+      s.parentElement.appendChild(g);
+      s.remove();
+      g.appendChild(s);
+      g.appendChild(pageNumber);
     }
 
     // Add handlers to the click event of slides
